@@ -8,7 +8,7 @@ if not status_ok_ then
 	return
 end
 
-compiler.compilers = { 'clang' }
+--[[ compiler.compilers = { 'clang' } ]]
 
 configs.setup({
 	ensure_installed = "all", -- one of "all" or a list of languages

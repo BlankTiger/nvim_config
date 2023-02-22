@@ -83,7 +83,7 @@ require('user.telescope')
 require('user.cmp')
 require('user.lsp')
 -- require('user.dap')
-require('user.trouble')
+--[[ require('user.trouble') ]]
 require('user.gitsigns')
 require('user.comment')
 -- require('user.neoscroll')
