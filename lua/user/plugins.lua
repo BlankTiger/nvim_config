@@ -10,7 +10,7 @@ return require('packer').startup(function(use)
 
   -- status line
   use('nvim-lualine/lualine.nvim')
-  use('akinsho/bufferline.nvim')
+  --[[ use('akinsho/bufferline.nvim') ]]
 
 
   -- treesitter
@@ -84,6 +84,7 @@ return require('packer').startup(function(use)
   -- utilities, ease of use
   -- use('potamides/pantran.nvim') -- for translations
   use('ThePrimeagen/harpoon')
+  use('mbbill/undotree')
   use({ 'AckslD/nvim-neoclip.lua', requires = { 'nvim-telescope/telescope.nvim' } })
   use('github/copilot.vim')
   use('tpope/vim-surround')

@@ -1,5 +1,7 @@
 -- quick startup
 require('impatient')
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 HOME = os.getenv("HOME")
 
@@ -22,6 +24,7 @@ opt.smartcase = true
 opt.softtabstop = 4
 opt.relativenumber = true
 opt.signcolumn = 'number'
+opt.syntax = 'on'
 opt.encoding = 'utf-8'
 opt.guifont = 'Hack Nerd Font'
 opt.shell = '/bin/zsh'
@@ -63,7 +66,7 @@ let g:silicon = {
 
 -- Set colorscheme
 opt.termguicolors = true
-cmd('colorscheme catppuccin-mocha')
+cmd('colorscheme catppuccin')
 --[[ cmd('hi Normal guibg=NONE ctermbg=NONE') ]]
 
 
@@ -74,7 +77,7 @@ require('user.hop')
 require('user.dashboard')
 require('user.nvim-tree')
 require('user.lualine')
-require('user.bufferline')
+--[[ require('user.bufferline') ]]
 require('user.treesitter')
 require('user.telescope')
 require('user.cmp')

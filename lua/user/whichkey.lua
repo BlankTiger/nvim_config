@@ -85,7 +85,6 @@ local opts_v = {
 	nowait = true,
 }
 
-
 local mappings = {
 	-- Bufferline and buffer management
 	["gb"] = { "<cmd>BufferLinePick<CR>", "Pick a buffer" },
@@ -101,7 +100,7 @@ local mappings = {
 		},
 		s = {
 			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-			"Show buffers"
+			"Show buffers",
 		},
 	},
 
@@ -110,6 +109,12 @@ local mappings = {
 	["<C-Down>"] = { "<cmd>resize +2<CR>", "Resize window down" },
 	["<C-Left>"] = { "<cmd>vertical resize -2<CR>", "Resize window left" },
 	["<C-Right>"] = { "<cmd>vertical resize +2<CR>", "Resize window right" },
+
+	-- Moving around in windows
+	["<C-h>"] = { "<C-w>h", "Move to window on the left" },
+	["<C-l>"] = { "<C-w>l", "Move to window on the right" },
+	["<C-j>"] = { "<C-w>j", "Move to the bottom window" },
+	["<C-k>"] = { "<C-w>k", "Move to the upper window" },
 
 	-- Utility
 	[";"] = { ":", "Allow to save a keystroke" },
@@ -128,7 +133,6 @@ local mappings = {
 	--[[ ["<space>p"] = { '"+p' }, ]]
 	--[[ ["<space>P"] = { '"+P' }, ]]
 
-
 	-- nvim-tree/file explorer
 	["<leader>e"] = {
 		name = "Explorer",
@@ -143,20 +147,30 @@ local mappings = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Find files",
 	},
-	["<leader>F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+	["<leader>G"] = {
+		"<cmd>lua require('telescope.builtin').git_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+		"Find files",
+	},
+	["<leader>F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
 	["<leader>P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
+	-- UndoTree
+	["<leader>U"] = { "<cmd>UndotreeToggle<cr>", "Toggle Undotree" },
+
 	-- harpoon
-	["<leader>H"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon menu" },
-	["<leader>hm"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add file to harpoon" },
-	["<leader>hn"] = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Navigate to next harpoon file" },
-	["<leader>hb"] = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Navigate to prev harpoon file" },
-	["<leader>h1"] = { "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "Navigate to 1st harpoon file" },
-	["<leader>h2"] = { "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "Navigate to 2nd harpoon file" },
-	["<leader>h3"] = { "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "Navigate to 3rd harpoon file" },
-	["<leader>h4"] = { "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "Navigate to 4th harpoon file" },
-
-
+	["<space>h"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon menu" },
+	["<space>m"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add file to harpoon" },
+	["<space>n"] = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Navigate to next harpoon file" },
+	["<space>p"] = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Navigate to prev harpoon file" },
+	["<space>1"] = { "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "Navigate to 1st harpoon file" },
+	["<space>2"] = { "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "Navigate to 2nd harpoon file" },
+	["<space>3"] = { "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "Navigate to 3rd harpoon file" },
+	["<space>4"] = { "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "Navigate to 4th harpoon file" },
+	["<space>5"] = { "<cmd>lua require('harpoon.ui').nav_file(5)<cr>", "Navigate to 5th harpoon file" },
+	["<space>6"] = { "<cmd>lua require('harpoon.ui').nav_file(6)<cr>", "Navigate to 6th harpoon file" },
+	["<space>7"] = { "<cmd>lua require('harpoon.ui').nav_file(7)<cr>", "Navigate to 7th harpoon file" },
+	["<space>8"] = { "<cmd>lua require('harpoon.ui').nav_file(8)<cr>", "Navigate to 8th harpoon file" },
+	["<space>9"] = { "<cmd>lua require('harpoon.ui').nav_file(9)<cr>", "Navigate to 9th harpoon file" },
 
 	-- packer
 	["<leader>p"] = {
@@ -196,58 +210,43 @@ local mappings = {
 	["<leader>l"] = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		d = {
-			"<cmd>Telescope lsp_document_diagnostics<cr>",
-			"Document Diagnostics",
-		},
-		w = {
-			"<cmd>Telescope lsp_workspace_diagnostics<cr>",
-			"Workspace Diagnostics",
-		},
+		d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
+		w = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
 		f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
 		I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-		j = {
-			"<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-			"Next Diagnostic",
-		},
-		k = {
-			"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-			"Prev Diagnostic",
-		},
+		j = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Next Diagnostic" },
+		k = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
 		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
 		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-		S = {
-			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-			"Workspace Symbols",
-		},
+		S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
 		t = { "<cmd> Telescope tags<cr>", "Show tags" },
 	},
 
-	-- DAP
-	["<leader>d"] = {
-		name = "DAP",
-		-- keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
-		-- keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
-		-- keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
-		-- keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts)
-		-- keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
-		-- keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
-		-- keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
-		-- keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
-		-- keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
-		b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle breakpoint" },
-		c = { "<cmd>lua require'dap'.continue()<CR>", "Continue" },
-		i = { "<cmd>lua require'dap'.step_into()<CR>", "Step into" },
-		o = { "<cmd>lua require'dap'.step_over()<CR>", "Step over" },
-		O = { "<cmd>lua require'dap'.step_out()<CR>", "Step out" },
-		r = { "<cmd>lua require'dap'.repl.toggle()<CR>", "Toggle REPL" },
-		l = { "<cmd>lua require'dap'.run_last()<CR>", "Run last" },
-		u = { "<cmd>lua require'dapui'.toggle()<CR>", "Toggle UI" },
-		t = { "<cmd>lua require'dap'.terminate()<CR>", "Terminate" },
-	},
+	--[[ -- DAP ]]
+	--[[ ["<leader>d"] = { ]]
+	--[[ 	name = "DAP", ]]
+	--[[ 	-- keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts) ]]
+	--[[ 	-- keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts) ]]
+	--[[ 	-- keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts) ]]
+	--[[ 	-- keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts) ]]
+	--[[ 	-- keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts) ]]
+	--[[ 	-- keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts) ]]
+	--[[ 	-- keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts) ]]
+	--[[ 	-- keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts) ]]
+	--[[ 	-- keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts) ]]
+	--[[ 	b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle breakpoint" }, ]]
+	--[[ 	c = { "<cmd>lua require'dap'.continue()<CR>", "Continue" }, ]]
+	--[[ 	i = { "<cmd>lua require'dap'.step_into()<CR>", "Step into" }, ]]
+	--[[ 	o = { "<cmd>lua require'dap'.step_over()<CR>", "Step over" }, ]]
+	--[[ 	O = { "<cmd>lua require'dap'.step_out()<CR>", "Step out" }, ]]
+	--[[ 	r = { "<cmd>lua require'dap'.repl.toggle()<CR>", "Toggle REPL" }, ]]
+	--[[ 	l = { "<cmd>lua require'dap'.run_last()<CR>", "Run last" }, ]]
+	--[[ 	u = { "<cmd>lua require'dapui'.toggle()<CR>", "Toggle UI" }, ]]
+	--[[ 	t = { "<cmd>lua require'dap'.terminate()<CR>", "Terminate" }, ]]
+	--[[ }, ]]
 
 	["<leader>s"] = {
 		name = "Search",
@@ -277,20 +276,19 @@ local mappings = {
 
 -- Bindings for moving lines up and down
 local mappings_n = {
-	["<S-n>"] = { "J", "Concatenate next line" },
+	["<S-m>"] = { "J", "Concatenate next line" },
 	["<S-k>"] = { "<cmd>MoveLine(-1)<CR>", "Move line up" },
 	["<S-j>"] = { "<cmd>MoveLine(1)<CR>", "Move line down" },
 }
 
 local mappings_v = {
-	["<S-n>"] = { "J", "Concatenate lines" },
+	["<S-m>"] = { "J", "Concatenate lines" },
 	["<S-k>"] = { ":'<,'>MoveBlock(-1)<CR>", "Move lines up" },
 	["<S-j>"] = { ":'<,'>MoveBlock(1)<CR>", "Move lines down" },
 	--[[ ["<space>y"] = { '"+y' }, ]]
 	--[[ ["<space>p"] = { "+p" }, ]]
 	--[[ ["<space>P"] = { "+P" }, ]]
 }
-
 
 which_key.setup(setup)
 which_key.register(mappings, opts)

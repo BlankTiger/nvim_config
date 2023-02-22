@@ -5,6 +5,8 @@ end
 
 nvim_tree.setup({
   view = {
+    width = 40,
+    side = "right",
     mappings = {
       list = {
         { key = 'vs', action = 'vsplit' },
