@@ -103,19 +103,26 @@ local mappings = {
 			"Show buffers",
 		},
 	},
+	-- vimtex
+	["<leader>v"] = {
+		v = { "<cmd>VimtexView<CR>", "View PDF" },
+		c = { "<cmd>VimtexCompile<CR>", "Compile" },
+		s = { "<cmd>VimtexStop<CR>", "Stop compilation" },
+		t = { "<cmd>VimtexTocToggle<CR>", "Toggle TOC" },
+		o = { "<cmd>VimtexCompileOutput<CR>", "Toggle output" },
+		w = { "<cmd>VimtexCountWords<CR>", "Count words" },
+	},
 
 	-- Resizing windows
 	["<C-Up>"] = { "<cmd>resize -2<CR>", "Resize window up" },
 	["<C-Down>"] = { "<cmd>resize +2<CR>", "Resize window down" },
 	["<C-Left>"] = { "<cmd>vertical resize -2<CR>", "Resize window left" },
 	["<C-Right>"] = { "<cmd>vertical resize +2<CR>", "Resize window right" },
-
 	-- Moving around in windows
 	["<C-h>"] = { "<C-w>h", "Move to window on the left" },
 	["<C-l>"] = { "<C-w>l", "Move to window on the right" },
 	["<C-j>"] = { "<C-w>j", "Move to the bottom window" },
 	["<C-k>"] = { "<C-w>k", "Move to the upper window" },
-
 	-- Utility
 	[";"] = { ":", "Allow to save a keystroke" },
 	["<C-b>"] = { "<C-v>", "Visual block mode" },
@@ -126,7 +133,6 @@ local mappings = {
 	["<leader>x"] = { "<cmd>HopWord<CR>", "Hop to any word" },
 	["<leader>X"] = { "<cmd>HopAnywhere<CR>", "Hop to anywhere" },
 	["<F8>"] = { "<cmd>TagbarToggle<CR>", "Show ctags" },
-
 	--[[ -- System clipboard ]]
 	--[[ ["<space>yy"] = { '"+yy' }, ]]
 	--[[ ["<space>yg_"] = { '"+yg_' }, ]]
@@ -141,7 +147,6 @@ local mappings = {
 		c = { "<cmd>NvimTreeClose<cr>", "Close" },
 		r = { "<cmd>NvimTreeRefresh<cr>", "Refresh" },
 	},
-
 	-- telescope
 	["<leader>f"] = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -153,10 +158,8 @@ local mappings = {
 	},
 	["<leader>F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
 	["<leader>P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-
 	-- UndoTree
 	["<leader>U"] = { "<cmd>UndotreeToggle<cr>", "Toggle Undotree" },
-
 	-- harpoon
 	["<space>h"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon menu" },
 	["<space>m"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add file to harpoon" },
@@ -171,7 +174,6 @@ local mappings = {
 	["<space>7"] = { "<cmd>lua require('harpoon.ui').nav_file(7)<cr>", "Navigate to 7th harpoon file" },
 	["<space>8"] = { "<cmd>lua require('harpoon.ui').nav_file(8)<cr>", "Navigate to 8th harpoon file" },
 	["<space>9"] = { "<cmd>lua require('harpoon.ui').nav_file(9)<cr>", "Navigate to 9th harpoon file" },
-
 	-- packer
 	["<leader>p"] = {
 		name = "Packer",
@@ -181,7 +183,6 @@ local mappings = {
 		S = { "<cmd>PackerStatus<cr>", "Status" },
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
 	},
-
 	-- git utilities
 	["<leader>g"] = {
 		name = "Git",
@@ -205,7 +206,6 @@ local mappings = {
 			"Diff",
 		},
 	},
-
 	-- LSP utilities
 	["<leader>l"] = {
 		name = "LSP",
@@ -224,7 +224,6 @@ local mappings = {
 		S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
 		t = { "<cmd> Telescope tags<cr>", "Show tags" },
 	},
-
 	--[[ -- DAP ]]
 	--[[ ["<leader>d"] = { ]]
 	--[[ 	name = "DAP", ]]
@@ -259,7 +258,6 @@ local mappings = {
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 	},
-
 	["<leader>t"] = {
 		name = "Terminal",
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },

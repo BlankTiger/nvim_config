@@ -9,4 +9,17 @@ if not status_ok_twilight then
 end
 
 twilight.setup()
-zen_mode.setup()
+zen_mode.setup({
+	window = {
+		backdrop = 0.95,
+		width = 120,
+	},
+	plugins = {
+		gitsigns = { enabled = false },
+		tmux = { enabled = false },
+		alacritty = {
+			enabled = true,
+			font = "14",
+		},
+	},
+})

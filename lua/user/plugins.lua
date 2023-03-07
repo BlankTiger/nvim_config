@@ -1,126 +1,62 @@
-return require('packer').startup(function(use)
-  -- speed up startup
-  use('lewis6991/impatient.nvim')
-
-  use('wbthomason/packer.nvim')
-
-  -- useful lua functions
-  use('nvim-lua/plenary.nvim')
-
-
-  -- status line
-  use('nvim-lualine/lualine.nvim')
-  --[[ use('akinsho/bufferline.nvim') ]]
-
-
-  -- treesitter
-  use('nvim-treesitter/nvim-treesitter')
-
-
-  -- telescope
-  use('nvim-telescope/telescope.nvim')
-  use({
+return {
+  'nvim-lua/plenary.nvim',
+  'nvim-lualine/lualine.nvim',
+  'nvim-treesitter/nvim-treesitter',
+  'nvim-telescope/telescope.nvim',
+  'nvim-telescope/telescope-file-browser.nvim',
+  'neovim/nvim-lspconfig',
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
+  'jose-elias-alvarez/null-ls.nvim',
+  'lervag/vimtex',
+  'barreiroleo/ltex-extra.nvim',
+  'simrat39/rust-tools.nvim',
+  'Vimjas/vim-python-pep8-indent',
+  'hrsh7th/nvim-cmp',
+  'hrsh7th/cmp-path',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/cmp-nvim-lua',
+  'hrsh7th/cmp-copilot',
+  'saadparwaiz1/cmp_luasnip',
+  'L3MON4D3/LuaSnip',
+  'rafamadriz/friendly-snippets',
+  'lewis6991/gitsigns.nvim',
+  'norcalli/nvim-colorizer.lua',
+  'kyazdani42/nvim-web-devicons',
+  'folke/zen-mode.nvim',
+  'folke/twilight.nvim',
+  'frazrepo/vim-rainbow',
+  'romainl/vim-cool',
+  'ThePrimeagen/harpoon',
+  'mbbill/undotree',
+  'github/copilot.vim',
+  'tpope/vim-surround',
+  'tpope/vim-repeat',
+  'tpope/vim-sleuth',
+  'tpope/vim-obsession',
+  'windwp/nvim-autopairs',
+  'numToStr/Comment.nvim',
+  'JoosepAlviste/nvim-ts-context-commentstring',
+  'moll/vim-bbye',
+  'akinsho/toggleterm.nvim',
+  'ahmedkhalf/project.nvim',
+  'lukas-reineke/indent-blankline.nvim',
+  'folke/which-key.nvim',
+  'fedepujol/move.nvim',
+  'ggandor/leap.nvim',
+  'preservim/tagbar',
+  'TimUntersberger/neogit',
+  'amadeus/vim-evokai',
+  'B4mbus/oxocarbon-lua.nvim',
+  'kyazdani42/nvim-tree.lua',
+  'glepnir/dashboard-nvim',
+  {
     'nvim-telescope/telescope-fzf-native.nvim',
-    run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
-  })
-  use('nvim-telescope/telescope-file-browser.nvim')
-
-
-  -- LSP
-  use('neovim/nvim-lspconfig')
-  use { "williamboman/mason.nvim" }
-  use { "williamboman/mason-lspconfig.nvim" }
-  -- use('williamboman/nvim-lsp-installer')
-  use('jose-elias-alvarez/null-ls.nvim')
-  -- use('folke/trouble.nvim')
-  -- use('glepnir/lspsaga.nvim')
-  use('lervag/vimtex')
-
-
-  -- DAP
-  -- use('mfussenegger/nvim-dap')
-  -- use({'rcarriga/nvim-dap-ui', requires={'mfussenegger/nvim-dap'}})
-  -- use('theHamsta/nvim-dap-virtual-text')
-  -- use('mfussenegger/nvim-dap-python')
-  -- use('ravenxrz/DAPInstall.nvim')
-  -- use('nvim-telescope/telescope-dap.nvim')
-
-
-  -- utilities for languages, linters, fixers
-  use('simrat39/rust-tools.nvim')
-  use('Vimjas/vim-python-pep8-indent')
-
-
-  -- autocompletion
-  use('hrsh7th/nvim-cmp')
-  use('hrsh7th/cmp-path')
-  use('hrsh7th/cmp-buffer')
-  use('hrsh7th/cmp-nvim-lsp')
-  use('hrsh7th/cmp-nvim-lua')
-  use('hrsh7th/cmp-copilot')
-  -- use({'tzachar/cmp-tabnine', run='powershell ./install.ps1'})
-  use('saadparwaiz1/cmp_luasnip')
-
-
-  -- snippets
-  use('L3MON4D3/LuaSnip')
-  use('rafamadriz/friendly-snippets')
-
-
-  -- visuals
-  use {
-    'glepnir/dashboard-nvim',
-    requires = { 'nvim-tree/nvim-web-devicons' }
-  }
-  use('lewis6991/gitsigns.nvim')
-  -- use('karb94/neoscroll.nvim')
-  use('norcalli/nvim-colorizer.lua')
-  use('kyazdani42/nvim-web-devicons')
-  use('folke/zen-mode.nvim')
-  use('folke/twilight.nvim')
-  use('frazrepo/vim-rainbow') -- rainbow parenthesis
-  use('romainl/vim-cool') -- disable highlighting of search after it's done
-  use('segeljakt/vim-silicon') -- share code snippets
-
-
-  -- utilities, ease of use
-  -- use('potamides/pantran.nvim') -- for translations
-  use('ThePrimeagen/harpoon')
-  use('mbbill/undotree')
-  use({ 'AckslD/nvim-neoclip.lua', requires = { 'nvim-telescope/telescope.nvim' } })
-  use('github/copilot.vim')
-  use('tpope/vim-surround')
-  use('tpope/vim-repeat')
-  use('tpope/vim-sleuth')
-  use('tpope/vim-obsession')
-  use('windwp/nvim-autopairs')
-  use('numToStr/Comment.nvim')
-  use('JoosepAlviste/nvim-ts-context-commentstring')
-  use('moll/vim-bbye')
-  use('akinsho/toggleterm.nvim')
-  use('ahmedkhalf/project.nvim')
-  use('lukas-reineke/indent-blankline.nvim')
-  use('folke/which-key.nvim')
-  use({ 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } })
-  use('fedepujol/move.nvim') -- move blocks and lines around
-  use('phaazon/hop.nvim') -- easier file navigation
-  use('preservim/tagbar') -- showing tags on the side
-  use({ 'sindrets/diffview.nvim', requires = { 'nvim-lua/plenary.nvim' } })
-  use('TimUntersberger/neogit')
-  use({
-    'iamcco/markdown-preview.nvim',
-    run = function() vim.fn['mkdp#util#install']() end,
-  })
-
-  -- browser support for neovim
-  use({
-    'glacambre/firenvim',
-    run = function() vim.fn['firenvim#install'](0) end
-  })
-
-
-  -- colorschemes
-  use { "catppuccin/nvim", as = "catppuccin" }
-  use('amadeus/vim-evokai')
-  use('B4mbus/oxocarbon-lua.nvim')
-end)
+    build =
+    'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+  },
+  { 'catppuccin/nvim',                                 name = 'catppuccin' },
+  { 'AckslD/nvim-neoclip.lua',                         dependencies = { 'nvim-telescope/telescope.nvim' } },
+  { dir = '/home/blanktiger/Projects/unorphanize.nvim' },
+}
