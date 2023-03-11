@@ -1,7 +1,6 @@
--- Plugins
 require('user.plugins')
 require('user.whichkey')
-require('user.hop')
+--[[ require('user.hop') ]]
 require('user.dashboard')
 require('user.nvim-tree')
 require('user.lualine')
@@ -11,11 +10,11 @@ require('user.telescope')
 require('user.cmp')
 require('user.lsp')
 --[[ require('user.ltex') ]]
--- require('user.dap')
+--[[ require('user.dap') ]]
 --[[ require('user.trouble') ]]
 require('user.gitsigns')
 require('user.comment')
--- require('user.neoscroll')
+--[[ require('user.neoscroll') ]]
 require('user.colorizer')
 require('user.autopairs')
 require('user.toggleterm')
@@ -24,6 +23,6 @@ require('user.indentline')
 require('user.neoclip')
 require('user.leap')
 require('user.neogit')
--- require('user.tabnine')
+--[[ require('user.tabnine') ]]
 require('user.zen-mode')
--- require('user.pantran')
+--[[ require('user.pantran') ]]

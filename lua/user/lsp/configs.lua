@@ -8,7 +8,7 @@ local lspconfig = require("lspconfig")
 local mason_lspconfig = require("mason-lspconfig")
 
 local servers = { "pyright", "rust_analyzer", "ltex", "texlab", "jsonls", "lua_ls", "dockerls", "tsserver", "clangd",
-  "cssls", "emmet_ls", "html", "marksman", "taplo", "yamlls", "jdtls", "marksman" }
+  "cssls", "emmet_ls", "html", "marksman", "taplo", "yamlls", "jdtls", "marksman", "kotlin-language-server" }
 -- local servers = { "pyright", "rust_analyzer", "powershell_es", "asm_lsp", "dockerls", "elixirls", "texlab", "vimls", "terraformls", "jsonls", "sumneko_lua", "tsserver", "ansiblels", "clangd", "cssls", "cssmodules_ls", "emmet_ls", "html", "jdtls", "julials", "marksman" }
 
 mason_lspconfig.setup({
@@ -20,6 +20,7 @@ for _, server in pairs(servers) do
     on_attach = require("user.lsp.handlers").on_attach,
     capabilities = require("user.lsp.handlers").capabilities,
   }
+
   local has_custom_opts, server_custom_opts = pcall(require, "user.lsp.settings." .. server)
   if has_custom_opts then
     opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
@@ -27,21 +28,23 @@ for _, server in pairs(servers) do
 
   if server == "ltex" then
     require("lspconfig").ltex.setup {
-      --[[ capabilities = require("user.lsp.handlers").capabilities, ]]
       on_attach = function(client, bufnr)
+        -- your other on_attach functions.
         require("ltex_extra").setup {
           load_langs = { "pl-PL", "en-US" }, -- table <string> : languages for witch dictionaries will be loaded
-          init_check = true,                 -- boolean : whether to load dictionaries on startup
-          path = nil,                        -- string : path to store dictionaries. Relative path uses current working directory
-          log_level = "none",                -- string : "none", "trace", "debug", "info", "warn", "error", "fatal"
+          init_check = true,      -- boolean : whether to load dictionaries on startup
+          path = nil,             -- string : path to store dictionaries. Relative path uses current working directory
+          log_level = "none",     -- string : "none", "trace", "debug", "info", "warn", "error", "fatal"
         }
       end,
       settings = {
         ltex = {
-          -- your settings.
+          language = "auto"
         }
       }
     }
+
+    goto continue
   end
 
   if server == "rust_analyzer" then
