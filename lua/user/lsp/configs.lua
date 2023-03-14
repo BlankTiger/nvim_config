@@ -8,7 +8,7 @@ local lspconfig = require("lspconfig")
 local mason_lspconfig = require("mason-lspconfig")
 
 local servers = { "pyright", "rust_analyzer", "ltex", "texlab", "jsonls", "lua_ls", "dockerls", "tsserver", "clangd",
-  "cssls", "emmet_ls", "html", "marksman", "taplo", "yamlls", "jdtls", "marksman", "kotlin-language-server" }
+  "cssls", "emmet_ls", "html", "marksman", "taplo", "yamlls", "jdtls", "marksman", "kotlin_language_server", "asm_lsp" }
 -- local servers = { "pyright", "rust_analyzer", "powershell_es", "asm_lsp", "dockerls", "elixirls", "texlab", "vimls", "terraformls", "jsonls", "sumneko_lua", "tsserver", "ansiblels", "clangd", "cssls", "cssmodules_ls", "emmet_ls", "html", "jdtls", "julials", "marksman" }
 
 mason_lspconfig.setup({
@@ -32,9 +32,9 @@ for _, server in pairs(servers) do
         -- your other on_attach functions.
         require("ltex_extra").setup {
           load_langs = { "pl-PL", "en-US" }, -- table <string> : languages for witch dictionaries will be loaded
-          init_check = true,      -- boolean : whether to load dictionaries on startup
-          path = nil,             -- string : path to store dictionaries. Relative path uses current working directory
-          log_level = "none",     -- string : "none", "trace", "debug", "info", "warn", "error", "fatal"
+          init_check = true,                 -- boolean : whether to load dictionaries on startup
+          path = nil,                        -- string : path to store dictionaries. Relative path uses current working directory
+          log_level = "none",                -- string : "none", "trace", "debug", "info", "warn", "error", "fatal"
         }
       end,
       settings = {
