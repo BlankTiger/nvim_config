@@ -7,6 +7,7 @@ return {
   'neovim/nvim-lspconfig',
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
+  'sindrets/diffview.nvim',
   'jose-elias-alvarez/null-ls.nvim',
   'lervag/vimtex',
   'barreiroleo/ltex-extra.nvim',
