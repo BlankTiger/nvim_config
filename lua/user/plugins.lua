@@ -23,6 +23,7 @@ return {
   'L3MON4D3/LuaSnip',
   'rafamadriz/friendly-snippets',
   'lewis6991/gitsigns.nvim',
+  --[[ 'luk400/vim-jukit', ]]
   'norcalli/nvim-colorizer.lua',
   'kyazdani42/nvim-web-devicons',
   'folke/zen-mode.nvim',
