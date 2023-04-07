@@ -33,6 +33,7 @@ return {
   'ThePrimeagen/harpoon',
   'mbbill/undotree',
   'github/copilot.vim',
+  'tpope/vim-fugitive',
   'tpope/vim-surround',
   'tpope/vim-repeat',
   'tpope/vim-sleuth',
