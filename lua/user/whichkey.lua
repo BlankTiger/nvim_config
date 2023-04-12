@@ -305,10 +305,18 @@ local mappings_v = {
 	["<S-m>"] = { "J", "Concatenate lines" },
 	["<S-k>"] = { ":'<,'>MoveBlock(-1)<CR>", "Move lines up" },
 	["<S-j>"] = { ":'<,'>MoveBlock(1)<CR>", "Move lines down" },
+	--[[ ["<C-r>"] = { ":'<,'>SearchReplaceSingleBufferVisualSelection<CR>" }, ]]
+	--[[ ["<C-s>"] = { ":'<,'>SearchReplaceWithinVisualSelection<CR>" }, ]]
+	--[[ ["<C-b>"] = { ":'<,'>SearchReplaceWithinVisualSelectionCWord<CR>" }, ]]
 	--[[ ["<space>y"] = { '"+y' }, ]]
 	--[[ ["<space>p"] = { "+p" }, ]]
 	--[[ ["<space>P"] = { "+P" }, ]]
 }
+
+-- visual selection replacement
+vim.api.nvim_set_keymap("v", "<C-r>", "<CMD>SearchReplaceSingleBufferVisualSelection<CR>", {})
+vim.api.nvim_set_keymap("v", "<C-s>", "<CMD>SearchReplaceWithinVisualSelection<CR>", {})
+vim.api.nvim_set_keymap("v", "<C-b>", "<CMD>SearchReplaceWithinVisualSelectionCWord<CR>", {})
 
 which_key.setup(setup)
 which_key.register(mappings, opts)

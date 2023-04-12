@@ -28,6 +28,7 @@ opt.encoding = 'utf-8'
 opt.guifont = 'Hack Nerd Font'
 opt.shell = '/bin/zsh'
 opt.scrolloff = 8
+opt.inccommand = "split"
 g.neovide_transparency = 1
 g.do_filetype_lua = 1
 g.oxcarbon_lua_keep_terminal = 1
