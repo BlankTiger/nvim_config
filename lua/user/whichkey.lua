@@ -160,20 +160,27 @@ local mappings = {
 	["<leader>P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 	-- UndoTree
 	["<leader>U"] = { "<cmd>UndotreeToggle<cr>", "Toggle Undotree" },
-	-- harpoon
-	["<space>h"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon menu" },
-	["<space>m"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add file to harpoon" },
-	["<space>n"] = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Navigate to next harpoon file" },
-	["<space>p"] = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Navigate to prev harpoon file" },
-	["<space>1"] = { "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "Navigate to 1st harpoon file" },
-	["<space>2"] = { "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "Navigate to 2nd harpoon file" },
-	["<space>3"] = { "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "Navigate to 3rd harpoon file" },
-	["<space>4"] = { "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "Navigate to 4th harpoon file" },
-	["<space>5"] = { "<cmd>lua require('harpoon.ui').nav_file(5)<cr>", "Navigate to 5th harpoon file" },
-	["<space>6"] = { "<cmd>lua require('harpoon.ui').nav_file(6)<cr>", "Navigate to 6th harpoon file" },
-	["<space>7"] = { "<cmd>lua require('harpoon.ui').nav_file(7)<cr>", "Navigate to 7th harpoon file" },
-	["<space>8"] = { "<cmd>lua require('harpoon.ui').nav_file(8)<cr>", "Navigate to 8th harpoon file" },
-	["<space>9"] = { "<cmd>lua require('harpoon.ui').nav_file(9)<cr>", "Navigate to 9th harpoon file" },
+
+	["<space>"] = {
+		-- harpoon
+		["h"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon menu" },
+		["m"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add file to harpoon" },
+		["n"] = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Navigate to next harpoon file" },
+		["p"] = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Navigate to prev harpoon file" },
+		["1"] = { "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "Navigate to 1st harpoon file" },
+		["2"] = { "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "Navigate to 2nd harpoon file" },
+		["3"] = { "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "Navigate to 3rd harpoon file" },
+		["4"] = { "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "Navigate to 4th harpoon file" },
+		["5"] = { "<cmd>lua require('harpoon.ui').nav_file(5)<cr>", "Navigate to 5th harpoon file" },
+		["6"] = { "<cmd>lua require('harpoon.ui').nav_file(6)<cr>", "Navigate to 6th harpoon file" },
+		["7"] = { "<cmd>lua require('harpoon.ui').nav_file(7)<cr>", "Navigate to 7th harpoon file" },
+		["8"] = { "<cmd>lua require('harpoon.ui').nav_file(8)<cr>", "Navigate to 8th harpoon file" },
+		["9"] = { "<cmd>lua require('harpoon.ui').nav_file(9)<cr>", "Navigate to 9th harpoon file" },
+		-- quickfix jumping
+		[","] = { "<cmd>cprev<cr>", "Go to prev quickfix entry" },
+		["."] = { "<cmd>cnext<cr>", "Go to next quickfix entry" },
+	},
+
 	-- packer
 	["<leader>p"] = {
 		name = "Packer",

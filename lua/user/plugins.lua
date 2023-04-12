@@ -62,4 +62,5 @@ return {
   { 'catppuccin/nvim',                                 name = 'catppuccin' },
   { 'AckslD/nvim-neoclip.lua',                         dependencies = { 'nvim-telescope/telescope.nvim' } },
   { dir = '/home/blanktiger/Projects/unorphanize.nvim' },
+  'vale1410/vim-minizinc',
 }
