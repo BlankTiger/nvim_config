@@ -9,6 +9,7 @@ require('user.treesitter')
 require('user.telescope')
 require('user.search-replace')
 require('user.cmp')
+--require('user.iron')
 require('user.lsp')
 --[[ require('user.ltex') ]]
 --[[ require('user.dap') ]]
