@@ -7,6 +7,7 @@ require('user.lualine')
 --[[ require('user.bufferline') ]]
 require('user.treesitter')
 require('user.telescope')
+require('user.search-replace')
 require('user.cmp')
 require('user.lsp')
 --[[ require('user.ltex') ]]
