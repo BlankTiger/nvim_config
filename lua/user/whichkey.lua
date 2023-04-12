@@ -112,7 +112,6 @@ local mappings = {
 		o = { "<cmd>VimtexCompileOutput<CR>", "Toggle output" },
 		w = { "<cmd>VimtexCountWords<CR>", "Count words" },
 	},
-
 	-- Resizing windows
 	["<C-Up>"] = { "<cmd>resize -2<CR>", "Resize window up" },
 	["<C-Down>"] = { "<cmd>resize +2<CR>", "Resize window down" },
@@ -160,7 +159,24 @@ local mappings = {
 	["<leader>P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 	-- UndoTree
 	["<leader>U"] = { "<cmd>UndotreeToggle<cr>", "Toggle Undotree" },
-
+	["r"] = {
+		name = "SearchReplaceSingleBuffer",
+		["s"] = { "<CMD>SearchReplaceSingleBufferSelections<CR>", "SearchReplaceSingleBuffer [s]elction list" },
+		["o"] = { "<CMD>SearchReplaceSingleBufferOpen<CR>", "[o]pen" },
+		["w"] = { "<CMD>SearchReplaceSingleBufferCWord<CR>", "[w]ord" },
+		["W"] = { "<CMD>SearchReplaceSingleBufferCWORD<CR>", "[W]ORD" },
+		["e"] = { "<CMD>SearchReplaceSingleBufferCExpr<CR>", "[e]xpr" },
+		["f"] = { "<CMD>SearchReplaceSingleBufferCFile<CR>", "[f]ile" },
+		["b"] = {
+			name = "SearchReplaceMultiBuffer",
+			["s"] = { "<CMD>SearchReplaceMultiBufferSelections<CR>", "SearchReplaceMultiBuffer [s]elction list" },
+			["o"] = { "<CMD>SearchReplaceMultiBufferOpen<CR>", "[o]pen" },
+			["w"] = { "<CMD>SearchReplaceMultiBufferCWord<CR>", "[w]ord" },
+			["W"] = { "<CMD>SearchReplaceMultiBufferCWORD<CR>", "[W]ORD" },
+			["e"] = { "<CMD>SearchReplaceMultiBufferCExpr<CR>", "[e]xpr" },
+			["f"] = { "<CMD>SearchReplaceMultiBufferCFile<CR>", "[f]ile" },
+		},
+	},
 	["<space>"] = {
 		-- harpoon
 		["h"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon menu" },
@@ -180,7 +196,6 @@ local mappings = {
 		[","] = { "<cmd>cprev<cr>", "Go to prev quickfix entry" },
 		["."] = { "<cmd>cnext<cr>", "Go to next quickfix entry" },
 	},
-
 	-- packer
 	["<leader>p"] = {
 		name = "Packer",
