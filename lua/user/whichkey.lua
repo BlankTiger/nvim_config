@@ -305,6 +305,12 @@ local mappings_n = {
 	["<S-j>"] = { "<cmd>MoveLine(1)<CR>", "Move line down" },
 }
 
+-- better w, e, b, ge motions
+vim.keymap.set({"n", "o", "x"}, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" })
+vim.keymap.set({"n", "o", "x"}, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" })
+vim.keymap.set({"n", "o", "x"}, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
+vim.keymap.set({"n", "o", "x"}, "ge", "<cmd>lua require('spider').motion('ge')<CR>", { desc = "Spider-ge" })
+
 local mappings_v = {
 	["<S-m>"] = { "J", "Concatenate lines" },
 	["<S-k>"] = { ":'<,'>MoveBlock(-1)<CR>", "Move lines up" },
