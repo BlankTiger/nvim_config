@@ -63,5 +63,5 @@ return {
 	{ "AckslD/nvim-neoclip.lua", dependencies = { "nvim-telescope/telescope.nvim" } },
 	{ dir = "/home/blanktiger/Projects/unorphanize.nvim" },
 	"vale1410/vim-minizinc",
-	{ "chrisgrieser/nvim-spider", lazy = true },
+	--[[ { "chrisgrieser/nvim-spider", lazy = true }, ]]
 }
