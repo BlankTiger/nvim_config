@@ -49,7 +49,7 @@ return {
 	"fedepujol/move.nvim",
 	"ggandor/leap.nvim",
 	"preservim/tagbar",
-	"TimUntersberger/neogit",
+	--"TimUntersberger/neogit",
 	"amadeus/vim-evokai",
 	"B4mbus/oxocarbon-lua.nvim",
 	"kyazdani42/nvim-tree.lua",

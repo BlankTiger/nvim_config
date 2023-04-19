@@ -113,7 +113,7 @@ return require('packer').startup(function(use)
   use('ggandor/leap.nvim')
   use('preservim/tagbar') -- showing tags on the side
   use({ 'sindrets/diffview.nvim', requires = { 'nvim-lua/plenary.nvim' } })
-  use('TimUntersberger/neogit')
+  --use('TimUntersberger/neogit')
   use({
     'iamcco/markdown-preview.nvim',
     run = function() vim.fn['mkdp#util#install']() end,
