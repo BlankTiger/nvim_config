@@ -11,7 +11,9 @@ local formatting = null_ls.builtins.formatting
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettier,
+		null_ls.builtins.diagnostics.eslint_d.with({
+			diagnostics_format = '[eslint] #{m}\n(#{c})'
+		}),
 		formatting.black.with({ extra_args = { "--fast", "--line-length", "100" } }),
 		formatting.stylua,
 		-- diagnostics.flake8

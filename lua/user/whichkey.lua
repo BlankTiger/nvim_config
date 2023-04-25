@@ -90,6 +90,10 @@ local mappings = {
 	["gb"] = { "<cmd>BufferLinePick<CR>", "Pick a buffer" },
 	["<S-l>"] = { "<cmd>BufferLineCycleNext<CR>", "Cycle to next buffer" },
 	["<S-h>"] = { "<cmd>BufferLineCyclePrev<CR>", "Cycle to previous buffer" },
+	["<leader>"] = {
+		name = "Some utility leader mappings",
+		["<leader>"] = { "<cmd>Prettier<CR>", "Use prettier" },
+	},
 	["<leader>c"] = { "<cmd>Bdelete!<CR>", "Close current buffer" },
 	["<leader>b"] = {
 		c = {
@@ -310,7 +314,6 @@ local mappings_n = {
 --[[ vim.keymap.set({"n", "o", "x"}, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" }) ]]
 --[[ vim.keymap.set({"n", "o", "x"}, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" }) ]]
 --[[ vim.keymap.set({"n", "o", "x"}, "ge", "<cmd>lua require('spider').motion('ge')<CR>", { desc = "Spider-ge" }) ]]
-
 local mappings_v = {
 	["<S-m>"] = { "J", "Concatenate lines" },
 	["<S-k>"] = { ":'<,'>MoveBlock(-1)<CR>", "Move lines up" },

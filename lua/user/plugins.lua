@@ -9,6 +9,7 @@ return {
 	"williamboman/mason-lspconfig.nvim",
 	"sindrets/diffview.nvim",
 	"jose-elias-alvarez/null-ls.nvim",
+	"MunifTanjim/prettier.nvim",
 	"lervag/vimtex",
 	"barreiroleo/ltex-extra.nvim",
 	"simrat39/rust-tools.nvim",

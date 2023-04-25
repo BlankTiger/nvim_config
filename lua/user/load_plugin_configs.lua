@@ -12,6 +12,7 @@ require('user.search-replace')
 require('user.cmp')
 --require('user.iron')
 require('user.lsp')
+require('user.prettier')
 --[[ require('user.ltex') ]]
 --[[ require('user.dap') ]]
 --[[ require('user.trouble') ]]
