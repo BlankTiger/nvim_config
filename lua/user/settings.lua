@@ -21,6 +21,7 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.softtabstop = 4
 opt.cursorline = true
+opt.number = true
 opt.relativenumber = true
 opt.signcolumn = 'number'
 opt.syntax = 'on'
