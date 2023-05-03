@@ -65,5 +65,6 @@ return {
 	{ dir = "/home/blanktiger/Projects/unorphanize.nvim" },
 	"vale1410/vim-minizinc",
 	"NoahTheDuke/vim-just",
+	"kevinhwang91/nvim-bqf",
 	--[[ { "chrisgrieser/nvim-spider", lazy = true }, ]]
 }
