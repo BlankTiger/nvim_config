@@ -117,8 +117,8 @@ local mappings = {
 		w = { "<cmd>VimtexCountWords<CR>", "Count words" },
 	},
 	-- Resizing windows
-	["<C-Up>"] = { "<cmd>resize -2<CR>", "Resize window up" },
-	["<C-Down>"] = { "<cmd>resize +2<CR>", "Resize window down" },
+	["<C-Down>"] = { "<cmd>resize -2<CR>", "Resize window up" },
+	["<C-Up>"] = { "<cmd>resize +2<CR>", "Resize window down" },
 	["<C-Left>"] = { "<cmd>vertical resize -2<CR>", "Resize window left" },
 	["<C-Right>"] = { "<cmd>vertical resize +2<CR>", "Resize window right" },
 	-- Moving around in windows
