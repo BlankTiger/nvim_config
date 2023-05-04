@@ -19,7 +19,7 @@ return {
 	"hrsh7th/cmp-buffer",
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/cmp-nvim-lua",
-	"hrsh7th/cmp-copilot",
+	--[[ "hrsh7th/cmp-copilot", ]]
 	"saadparwaiz1/cmp_luasnip",
 	"L3MON4D3/LuaSnip",
 	"rafamadriz/friendly-snippets",
@@ -33,7 +33,7 @@ return {
 	"romainl/vim-cool",
 	"ThePrimeagen/harpoon",
 	"mbbill/undotree",
-	"github/copilot.vim",
+	--[[ "github/copilot.vim", ]]
 	"tpope/vim-fugitive",
 	"tpope/vim-surround",
 	"tpope/vim-repeat",
