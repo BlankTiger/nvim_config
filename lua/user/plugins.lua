@@ -66,5 +66,6 @@ return {
 	"vale1410/vim-minizinc",
 	"NoahTheDuke/vim-just",
 	"kevinhwang91/nvim-bqf",
+	"junegunn/fzf",
 	--[[ { "chrisgrieser/nvim-spider", lazy = true }, ]]
 }
