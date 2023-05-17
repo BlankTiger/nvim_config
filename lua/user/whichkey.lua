@@ -199,6 +199,7 @@ local mappings = {
 		-- quickfix jumping
 		[","] = { "<cmd>cprev<cr>", "Go to prev quickfix entry" },
 		["."] = { "<cmd>cnext<cr>", "Go to next quickfix entry" },
+		["c"] = { "<cmd>cclose<cr>", "Close quickfix" },
 	},
 	-- packer
 	["<leader>p"] = {
