@@ -15,7 +15,7 @@ null_ls.setup({
 		--[[ 	diagnostics_format = '[eslint] #{m}\n(#{c})' ]]
 		--[[ }), ]]
 		formatting.black.with({ extra_args = { "--fast", "--line-length", "100" } }),
-		formatting.stylua,
+		--[[ formatting.stylua, ]]
 		-- diagnostics.flake8
 	},
 })
