@@ -7,7 +7,7 @@ lsp_installer.setup()
 local lspconfig = require("lspconfig")
 local mason_lspconfig = require("mason-lspconfig")
 
-local servers = { "pyright", "rust_analyzer", "ltex", "texlab", "jsonls", "lua_ls", "dockerls", "tsserver", "clangd",
+local servers = { "jedi_language_server", "rust_analyzer", "ltex", "texlab", "jsonls", "lua_ls", "dockerls", "tsserver", "clangd",
   "cssls", "emmet_ls", "html", "marksman", "taplo", "yamlls", "jdtls", "marksman", "kotlin_language_server", "asm_lsp",
   "bashls", "tailwindcss"
 }
@@ -49,6 +49,22 @@ for _, server in pairs(servers) do
 
     goto continue
   end
+
+  --[[ if server == "pylsp" then ]]
+  --[[   require("lspconfig").pylsp.setup { ]]
+  --[[     settings = { ]]
+  --[[       pylsp = { ]]
+  --[[         plugins = { ]]
+  --[[           pycodestyle = { ]]
+  --[[             --[[ ignore = {'W391'}, ]]
+  --[[             maxLineLength = 100, ]]
+  --[[           } ]]
+  --[[         } ]]
+  --[[       }, ]]
+  --[[     } ]]
+  --[[   } ]]
+  --[[   goto continue ]]
+  --[[ end ]]
 
   if server == "rust_analyzer" then
     local keymap = vim.keymap.set
