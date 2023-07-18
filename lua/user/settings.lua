@@ -11,6 +11,9 @@ local cmd = vim.cmd
 g.mapleader = ','
 g.maplocalleader = ','
 
+-- tagbar
+g.tagbar_position = 'topleft vertical'
+
 -- User settings --
 opt.mouse = 'a'
 opt.autoindent = true

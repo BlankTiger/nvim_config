@@ -57,15 +57,47 @@ return {
 	"glepnir/dashboard-nvim",
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
-		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+		build =
+		"cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 	},
 	{ "roobert/search-replace.nvim" },
-	{ "catppuccin/nvim", name = "catppuccin" },
-	{ "AckslD/nvim-neoclip.lua", dependencies = { "nvim-telescope/telescope.nvim" } },
+	{ "catppuccin/nvim",                                 name = "catppuccin" },
+	{ "AckslD/nvim-neoclip.lua",                         dependencies = { "nvim-telescope/telescope.nvim" } },
 	{ dir = "/home/blanktiger/Projects/unorphanize.nvim" },
 	"vale1410/vim-minizinc",
 	"NoahTheDuke/vim-just",
 	"kevinhwang91/nvim-bqf",
 	"junegunn/fzf",
+	{
+		"rcarriga/nvim-dap-ui",
+		dependencies = "mfussenegger/nvim-dap",
+		config = function()
+			local dap = require("dap")
+			local dapui = require("dapui")
+			dapui.setup()
+			dap.listeners.after.event_initialized["dapui_config"] = function()
+				dapui.open()
+			end
+			dap.listeners.before.event_terminated["dapui_config"] = function()
+				dapui.close()
+			end
+			dap.listeners.before.event_exited["dapui_config"] = function()
+				dapui.close()
+			end
+		end
+	},
+	{ "mfussenegger/nvim-dap", },
+	{
+		"mfussenegger/nvim-dap-python",
+		ft = "python",
+		dependencies = {
+			"mfussenegger/nvim-dap",
+			"rcarriga/nvim-dap-ui",
+		},
+		config = function(_, opts)
+			local path = "~/Projects/venv/bin/python"
+			require("dap-python").setup(path)
+		end,
+	},
 	--[[ { "chrisgrieser/nvim-spider", lazy = true }, ]]
 }

@@ -17,7 +17,7 @@ null_ls.setup({
 		formatting.black.with({ extra_args = { "--fast", "--line-length", "100" } }),
 		formatting.isort.with({ extra_args = { "--profile", "black", "-l", "100" } }),
 		diagnostics.mypy,
-		diagnostics.ruff,
+		diagnostics.ruff.with({ extra_args = { "--line-length", "100" }}),
 		--[[ formatting.stylua, ]]
 		-- diagnostics.flake8
 	},
