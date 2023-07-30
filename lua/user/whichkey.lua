@@ -88,8 +88,8 @@ local opts_v = {
 local mappings = {
 	-- Bufferline and buffer management
 	["gb"] = { "<cmd>BufferLinePick<CR>", "Pick a buffer" },
-	["<S-l>"] = { "<cmd>BufferLineCycleNext<CR>", "Cycle to next buffer" },
-	["<S-h>"] = { "<cmd>BufferLineCyclePrev<CR>", "Cycle to previous buffer" },
+	--[[ ["<S-l>"] = { "<cmd>BufferLineCycleNext<CR>", "Cycle to next buffer" }, ]]
+	--[[ ["<S-h>"] = { "<cmd>BufferLineCyclePrev<CR>", "Cycle to previous buffer" }, ]]
 	["<leader>"] = {
 		name = "Some utility leader mappings",
 		["<leader>"] = { "<cmd>Prettier<CR>", "Use prettier" },
@@ -155,7 +155,7 @@ local mappings = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Find files",
 	},
-	["<leader>G"] = {
+	["<leader>i"] = {
 		"<cmd>lua require('telescope.builtin').git_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Find files",
 	},
@@ -269,6 +269,7 @@ local mappings = {
 		-- keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 		b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle breakpoint" },
 		c = { "<cmd>lua require'dap'.continue()<CR>", "Continue" },
+		p = { "<cmd>lua require'dap'.pause()<CR>", "Pause" },
 		i = { "<cmd>lua require'dap'.step_into()<CR>", "Step into" },
 		o = { "<cmd>lua require'dap'.step_over()<CR>", "Step over" },
 		O = { "<cmd>lua require'dap'.step_out()<CR>", "Step out" },
@@ -305,6 +306,8 @@ local mappings = {
 
 -- Bindings for moving lines up and down
 local mappings_n = {
+	["<S-h>"] = { "^", "Go to line start" },
+	["<S-l>"] = { "$", "Go to line end" },
 	["<S-m>"] = { "J", "Concatenate next line" },
 	["<S-k>"] = { "<cmd>MoveLine(-1)<CR>", "Move line up" },
 	["<S-j>"] = { "<cmd>MoveLine(1)<CR>", "Move line down" },
