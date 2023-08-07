@@ -25,7 +25,7 @@ require('user.toggleterm')
 require('user.project')
 require('user.indentline')
 require('user.neoclip')
-require('user.leap')
+--[[ require('user.leap') ]]
 --require('user.neogit')
 --[[ require('user.tabnine') ]]
 require('user.zen-mode')
