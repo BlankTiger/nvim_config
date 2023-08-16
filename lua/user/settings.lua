@@ -53,16 +53,16 @@ g.silicon = {
         theme = 'TwoDark',
         font = 'Hack',
         background = '#555555',
-            ['shadow-color'] = '#333333',
-            ['line-pad'] = 2,
-            ['pad-horiz'] = 80,
-            ['pad-vert'] = 100,
-            ['shadow-blur-radius'] = 5,
-            ['shadow-offset-x'] = 4,
-            ['shadow-offset-y'] = 4,
-            ['line-number'] = true,
-            ['round-corner'] = true,
-            ['window-controls'] = true,
+        ['shadow-color'] = '#333333',
+        ['line-pad'] = 2,
+        ['pad-horiz'] = 80,
+        ['pad-vert'] = 100,
+        ['shadow-blur-radius'] = 5,
+        ['shadow-offset-x'] = 4,
+        ['shadow-offset-y'] = 4,
+        ['line-number'] = true,
+        ['round-corner'] = true,
+        ['window-controls'] = true,
 }
 
 g.jukit_inline_plotting = 0
@@ -71,6 +71,6 @@ g.jupytext_style = 'hydrogen'
 -- g.python3_host_prog = HOME .. '/.local/venv/nvim/Scripts/python.exe'
 
 -- Set colorscheme
-vim.cmd('colorscheme catppuccin')
---[[ opt.termguicolors = true ]]
+opt.termguicolors = true
+vim.cmd('colorscheme tokyonight-moon')
 --[[ cmd('hi Normal guibg=NONE ctermbg=NONE') ]]
