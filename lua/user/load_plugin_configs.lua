@@ -25,6 +25,7 @@ require('user.toggleterm')
 require('user.project')
 require('user.indentline')
 require('user.neoclip')
+require('user.mini-ai')
 --[[ require('user.leap') ]]
 --require('user.neogit')
 --[[ require('user.tabnine') ]]

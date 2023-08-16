@@ -100,4 +100,5 @@ return {
 		end,
 	},
 	--[[ { "chrisgrieser/nvim-spider", lazy = true }, ]]
+	{ 'echasnovski/mini.ai', version = '*' },
 }
