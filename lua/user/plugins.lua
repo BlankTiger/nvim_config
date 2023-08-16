@@ -26,7 +26,7 @@ return {
 	"lewis6991/gitsigns.nvim",
 	--[[ 'luk400/vim-jukit', ]]
 	"norcalli/nvim-colorizer.lua",
-	"kyazdani42/nvim-web-devicons",
+	--[[ "kyazdani42/nvim-web-devicons", ]]
 	"folke/zen-mode.nvim",
 	"folke/twilight.nvim",
 	"frazrepo/vim-rainbow",
@@ -54,6 +54,15 @@ return {
 	"amadeus/vim-evokai",
 	"B4mbus/oxocarbon-lua.nvim",
 	"kyazdani42/nvim-tree.lua",
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
+		}
+	},
 	"glepnir/dashboard-nvim",
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
@@ -100,5 +109,5 @@ return {
 		end,
 	},
 	--[[ { "chrisgrieser/nvim-spider", lazy = true }, ]]
-	{ 'echasnovski/mini.ai', version = '*' },
+	{ 'echasnovski/mini.ai',   version = '*' },
 }

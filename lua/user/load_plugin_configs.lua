@@ -2,7 +2,8 @@ require('user.plugins')
 require('user.whichkey')
 --[[ require('user.hop') ]]
 require('user.dashboard')
-require('user.nvim-tree')
+require('user.neotree')
+--[[ require('user.nvim-tree') ]]
 require('user.lualine')
 --[[ require('user.bufferline') ]]
 require('user.treesitter')

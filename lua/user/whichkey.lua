@@ -143,13 +143,14 @@ local mappings = {
 	--[[ ["<space>P"] = { '"+P' }, ]]
 
 	-- nvim-tree/file explorer
-	["<leader>e"] = {
-		name = "Explorer",
-		e = { "<cmd>NvimTreeToggle<cr>", "Toggle" },
-		o = { "<cmd>NvimTreeOpen<cr>", "Open" },
-		c = { "<cmd>NvimTreeClose<cr>", "Close" },
-		r = { "<cmd>NvimTreeRefresh<cr>", "Refresh" },
-	},
+	["<leader>e"] = { "<cmd>Neotree toggle<CR>", "Open neotree" },
+	--[[ ["<leader>e"] = { ]]
+	--[[ 	name = "Explorer", ]]
+	--[[ 	e = { "<cmd>NvimTreeToggle<cr>", "Toggle" }, ]]
+	--[[ 	o = { "<cmd>NvimTreeOpen<cr>", "Open" }, ]]
+	--[[ 	c = { "<cmd>NvimTreeClose<cr>", "Close" }, ]]
+	--[[ 	r = { "<cmd>NvimTreeRefresh<cr>", "Refresh" }, ]]
+	--[[ }, ]]
 	-- telescope
 	["<leader>f"] = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
