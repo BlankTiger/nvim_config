@@ -123,11 +123,13 @@ return {
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
+	{ "folke/trouble.nvim" },
 	{
 		"folke/flash.nvim",
 		event = "VeryLazy",
 		opts = {},
 	},
+
 	{ "RRethy/vim-illuminate" },
 	{ "lukas-reineke/indent-blankline.nvim" },
 
