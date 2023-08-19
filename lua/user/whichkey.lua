@@ -215,6 +215,7 @@ local mappings = {
 	--	name = "Jupyter",
 	--	["]x"] = { "ctrih]h<CR><CR>" }
 	--},
+	--
 	-- git utilities
 	["<leader>g"] = {
 		name = "Git",
@@ -238,6 +239,7 @@ local mappings = {
 			"Diff",
 		},
 	},
+
 	-- LSP utilities
 	["<leader>l"] = {
 		name = "LSP",
@@ -256,6 +258,7 @@ local mappings = {
 		S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
 		t = { "<cmd> Telescope tags<cr>", "Show tags" },
 	},
+
 	-- DAP
 	["<leader>d"] = {
 		name = "DAP",
@@ -286,10 +289,10 @@ local mappings = {
 		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 		R = { "<cmd>Telescope registers<cr>", "Registers" },
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
+		r = { "<cmd>lua require('spectre').open()<cr>", "Replace with Spectre" },
 	},
 	["<leader>t"] = {
 		name = "Terminal",
