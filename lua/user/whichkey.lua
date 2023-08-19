@@ -312,6 +312,8 @@ local mappings_n = {
 	["<S-m>"] = { "J", "Concatenate next line" },
 	["<S-k>"] = { "<cmd>MoveLine(-1)<CR>", "Move line up" },
 	["<S-j>"] = { "<cmd>MoveLine(1)<CR>", "Move line down" },
+	[">"] = { ">>", "Indent" },
+	["<"] = { "<<", "Dedent" },
 }
 
 -- better w, e, b, ge motions
