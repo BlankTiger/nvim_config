@@ -7,5 +7,5 @@ mini_indentscope.setup({
   options = {
     try_as_border = true,
   },
-  symbol = "|"
+  symbol = "│",
 })
