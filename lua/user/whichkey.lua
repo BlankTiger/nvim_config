@@ -131,6 +131,7 @@ local mappings = {
 	["<C-b>"] = { "<C-v>", "Visual block mode" },
 	["<leader>w"] = { "<cmd>w!<CR>", "Save" },
 	["<leader>q"] = { "<cmd>q<CR>", "Quit" },
+	["<leader>Q"] = { "<cmd>quitall<CR>", "Quit all" },
 	["<leader>y"] = { "<cmd>lua require('telescope').extensions.neoclip.default()<CR>", "Neoclip saved yanks" },
 	["<leader>z"] = { "<cmd>lua require('zen-mode').toggle()<CR>", "Toggle zen-mode" },
 	["<leader>x"] = { "<cmd>HopWord<CR>", "Hop to any word" },
