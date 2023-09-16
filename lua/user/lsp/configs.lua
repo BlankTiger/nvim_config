@@ -7,7 +7,7 @@ lsp_installer.setup()
 local lspconfig = require("lspconfig")
 local mason_lspconfig = require("mason-lspconfig")
 
-local servers = { "jedi_language_server", "rust_analyzer", "ltex", "texlab", "jsonls", "lua_ls", "dockerls", "tsserver",
+local servers = { "gopls", "jedi_language_server", "rust_analyzer", "ltex", "texlab", "jsonls", "lua_ls", "dockerls", "tsserver",
   "clangd",
   "cssls", "emmet_ls", "html", "marksman", "taplo", "yamlls", "jdtls", "marksman", "kotlin_language_server", "asm_lsp",
   "bashls", "tailwindcss"
