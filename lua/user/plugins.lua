@@ -1,7 +1,11 @@
 return {
 	"nvim-lua/plenary.nvim",
 	{ "nvim-lualine/lualine.nvim", event = "VeryLazy" },
+
 	"nvim-treesitter/nvim-treesitter",
+	"nvim-treesitter/nvim-treesitter-textobjects",
+	"nvim-treesitter/nvim-treesitter-context",
+
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-file-browser.nvim",
 	"neovim/nvim-lspconfig",
