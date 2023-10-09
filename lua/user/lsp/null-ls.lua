@@ -16,8 +16,15 @@ null_ls.setup({
 		--[[ }), ]]
 		formatting.black.with({ extra_args = { "--fast", "--line-length", "100" } }),
 		formatting.isort.with({ extra_args = { "--profile", "black", "-l", "100" } }),
-		diagnostics.mypy.with({ extra_args = { "--ignore-missing-imports" } }),
-		diagnostics.ruff.with({ extra_args = { "--line-length", "100" }}),
+		diagnostics.mypy.with({
+			extra_args = {
+				"--ignore-missing-imports",
+				"--install-types",
+				"--disallow-untyped-defs",
+				"--warn-redundant-casts",
+				"--warn-unused-ignores" }
+		}),
+		diagnostics.ruff.with({ extra_args = { "--line-length", "100" } }),
 		--[[ formatting.stylua, ]]
 		-- diagnostics.flake8
 	},

@@ -7,12 +7,32 @@ lsp_installer.setup()
 local lspconfig = require("lspconfig")
 local mason_lspconfig = require("mason-lspconfig")
 
-local servers = { "gopls", "jedi_language_server", "rust_analyzer", "ltex", "texlab", "jsonls", "lua_ls", "dockerls", "tsserver",
+local servers = {
+  "gopls",
+  "pyright",
+  -- "pylyzer",
+  -- jedi_language_server
+  "rust_analyzer",
+  "ltex",
+  "texlab",
+  "jsonls",
+  "lua_ls",
+  "dockerls",
+  "tsserver",
   "clangd",
-  "cssls", "emmet_ls", "html", "marksman", "taplo", "yamlls", "jdtls", "marksman", "kotlin_language_server", "asm_lsp",
-  "bashls", "tailwindcss"
+  "cssls",
+  "emmet_ls",
+  "html",
+  "marksman",
+  "taplo",
+  "yamlls",
+  "jdtls",
+  "marksman",
+  "kotlin_language_server",
+  "asm_lsp",
+  "bashls",
+  "tailwindcss"
 }
--- ruff_lsp
 -- local servers = { "pyright", "rust_analyzer", "powershell_es", "asm_lsp", "dockerls", "elixirls", "texlab", "vimls", "terraformls", "jsonls", "sumneko_lua", "tsserver", "ansiblels", "clangd", "cssls", "cssmodules_ls", "emmet_ls", "html", "jdtls", "julials", "marksman" }
 
 mason_lspconfig.setup({
