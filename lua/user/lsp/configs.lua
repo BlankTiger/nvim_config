@@ -8,6 +8,8 @@ local lspconfig = require("lspconfig")
 local mason_lspconfig = require("mason-lspconfig")
 
 local servers = {
+  "ocaml-lsp",
+  "ocamlformat",
   "gopls",
   "pyright",
   -- "pylyzer",
