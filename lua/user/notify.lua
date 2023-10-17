@@ -5,5 +5,5 @@ end
 
 notify.setup({
     top_down = false,
-    fps = 10,
+    fps = 90,
 })
