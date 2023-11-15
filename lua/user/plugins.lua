@@ -12,9 +12,9 @@ return {
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	{ "sindrets/diffview.nvim",    event = "VeryLazy" },
-	"jose-elias-alvarez/null-ls.nvim",
+	"nvimtools/none-ls.nvim",
 	{ "MunifTanjim/prettier.nvim",     event = "VeryLazy" },
-	{ "lervag/vimtex",                 event = "VeryLazy" },
+	{ "lervag/vimtex" },
 	{ "barreiroleo/ltex-extra.nvim",   event = "VeryLazy" },
 	{ "simrat39/rust-tools.nvim",      event = "VeryLazy" },
 	{ "Vimjas/vim-python-pep8-indent", event = "VeryLazy" },
@@ -135,7 +135,7 @@ return {
 	},
 
 	{ "RRethy/vim-illuminate" },
-	{ "lukas-reineke/indent-blankline.nvim" },
+	{ "lukas-reineke/indent-blankline.nvim", version = "2.20.8" },
 
 	{
 		"folke/noice.nvim",
