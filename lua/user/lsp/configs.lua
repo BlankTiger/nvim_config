@@ -8,13 +8,13 @@ local lspconfig = require("lspconfig")
 local mason_lspconfig = require("mason-lspconfig")
 
 local servers = {
-  "ocamllsp",
+  -- "ocamllsp",
   -- "ocamlformat",
   "gopls",
-  "pyright",
   "arduino_language_server",
+  -- "pyright",
   -- "pylyzer",
-  -- jedi_language_server
+  "jedi_language_server",
   "rust_analyzer",
   "ltex",
   "texlab",
