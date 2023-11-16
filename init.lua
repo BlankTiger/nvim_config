@@ -1,7 +1,6 @@
 vim.opt.termguicolors = true
 
-require('user.prepare_lazy')
-local plugins = require('user.plugins')
+require('config.prepare_lazy')
+local plugins = require('config.plugins')
 require('lazy').setup(plugins)
-require('user.load_plugin_configs')
-require('user.settings')
+require('config.settings')
