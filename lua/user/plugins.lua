@@ -78,7 +78,7 @@ return {
 
 	{
 		"hrsh7th/nvim-cmp",
-		lazy = true,
+		event = "InsertEnter",
 		config = function()
 			require("config.cmp")
 		end,
@@ -272,24 +272,8 @@ return {
 	},
 
 	{
-		"folke/noice.nvim",
-		-- event = "VeryLazy",
-		opts = {
-			-- add any options here
-		},
-		dependencies = {
-			{
-				"rcarriga/nvim-notify",
-				config = function()
-					require("config.notify")
-				end,
-			},
-			"MunifTanjim/nui.nvim",
-		}
-	},
-
-	{
 		"folke/trouble.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("config.trouble")
 		end
@@ -317,6 +301,22 @@ return {
 	},
 
 
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {
+			-- add any options here
+		},
+		dependencies = {
+			{
+				"rcarriga/nvim-notify",
+				config = function()
+					require("config.notify")
+				end,
+			},
+			"MunifTanjim/nui.nvim",
+		}
+	},
 
 	{ "nvim-pack/nvim-spectre",          event = "VeryLazy" },
 
