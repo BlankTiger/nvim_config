@@ -24,13 +24,14 @@ return {
 
 	{
 		"nvim-telescope/telescope.nvim",
-		event = "VeryLazy",
+		-- event = "VeryLazy",
 		lazy = true,
 		config = function()
 			require("config.telescope")
 		end,
 		dependencies = {
 			"nvim-telescope/telescope-file-browser.nvim",
+			"junegunn/fzf",
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
 				build =
@@ -41,7 +42,8 @@ return {
 
 	{
 		"neovim/nvim-lspconfig",
-		event = "VeryLazy",
+		-- event = "VeryLazy",
+		lazy = true,
 		config = function()
 			require("config.lsp")
 		end
@@ -76,7 +78,7 @@ return {
 
 	{
 		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
+		lazy = true,
 		config = function()
 			require("config.cmp")
 		end,
@@ -157,6 +159,7 @@ return {
 	{
 		"glepnir/dashboard-nvim",
 		lazy = false,
+		priority = 900,
 		config = function()
 			require("config.dashboard")
 		end
@@ -181,7 +184,6 @@ return {
 	--[[ "vale1410/vim-minizinc", ]]
 	{ "NoahTheDuke/vim-just",  event = "VeryLazy" },
 	{ "kevinhwang91/nvim-bqf", event = "VeryLazy" },
-	"junegunn/fzf",
 	{
 		"rcarriga/nvim-dap-ui",
 		dependencies = {
@@ -199,7 +201,7 @@ return {
 				end,
 			},
 		},
-		event = "VeryLazy",
+		lazy = true,
 		config = function()
 			local dap = require("dap")
 			local dapui = require("dapui")
@@ -270,8 +272,24 @@ return {
 	},
 
 	{
+		"folke/noice.nvim",
+		-- event = "VeryLazy",
+		opts = {
+			-- add any options here
+		},
+		dependencies = {
+			{
+				"rcarriga/nvim-notify",
+				config = function()
+					require("config.notify")
+				end,
+			},
+			"MunifTanjim/nui.nvim",
+		}
+	},
+
+	{
 		"folke/trouble.nvim",
-		event = "VeryLazy",
 		config = function()
 			require("config.trouble")
 		end
@@ -298,28 +316,9 @@ return {
 		end
 	},
 
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {
-			-- add any options here
-		},
-		dependencies = {
-			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-			"MunifTanjim/nui.nvim",
-			-- OPTIONAL:
-			--   `nvim-notify` is only needed, if you want to use the notification view.
-			--   If not available, we use `mini` as the fallback
-			{
-				"rcarriga/nvim-notify",
-				config = function()
-					require("config.notify")
-				end
-			},
-		}
-	},
 
-	{ "nvim-pack/nvim-spectre" },
+
+	{ "nvim-pack/nvim-spectre",          event = "VeryLazy" },
 
 	{ 'eandrju/cellular-automaton.nvim', lazy = true }
 }

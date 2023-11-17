@@ -161,7 +161,8 @@ local mappings = {
 		"<cmd>lua require('telescope.builtin').git_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Find files",
 	},
-	["<leader>F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+	["<leader>F"] = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "Find Text" },
+	-- ["<leader>F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
 	["<leader>P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 	-- UndoTree
 	["<leader>U"] = { "<cmd>UndotreeToggle<cr>", "Toggle Undotree" },
