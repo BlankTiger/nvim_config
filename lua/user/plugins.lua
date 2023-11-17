@@ -41,9 +41,18 @@ return {
 	},
 
 	{
+		"folke/neodev.nvim",
+		lazy = false,
+		priority = 100,
+		config = function()
+			require("neodev").setup({})
+		end,
+		opts = {}
+	},
+	{
 		"neovim/nvim-lspconfig",
-		-- event = "VeryLazy",
-		lazy = true,
+		lazy = false,
+		priority = 50,
 		config = function()
 			require("config.lsp")
 		end
@@ -79,6 +88,7 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
+		-- lazy = true,
 		config = function()
 			require("config.cmp")
 		end,
@@ -90,10 +100,10 @@ return {
 			"hrsh7th/cmp-nvim-lua",
 			--[[ "hrsh7th/cmp-copilot", ]]
 			"saadparwaiz1/cmp_luasnip",
-			"L3MON4D3/LuaSnip",
 		}
 	},
 	-- "rafamadriz/friendly-snippets",
+	{ "L3MON4D3/LuaSnip",     lazy = true },
 
 	{
 		"lewis6991/gitsigns.nvim",
@@ -307,6 +317,10 @@ return {
 		opts = {
 			-- add any options here
 		},
+		config = function()
+			local noice = require("noice")
+			noice.setup()
+		end,
 		dependencies = {
 			{
 				"rcarriga/nvim-notify",

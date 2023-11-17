@@ -3,17 +3,17 @@ local autocmd_group = vim.api.nvim_create_augroup(
 	{ clear = true }
 )
 
-vim.g.lsp_loaded = false
+vim.g.treesitter_loaded = false
 
 vim.api.nvim_create_autocmd(
 	{ "BufEnter" },
 	{
 		pattern = { "*.*" },
 		callback = function()
-			if not vim.g.lsp_loaded then
-				require("lspconfig")
+			if not vim.g.treesitter_loaded then
+				-- require("cmp")
 				require("nvim-treesitter")
-				vim.g.lsp_loaded = true
+				vim.g.treesitter_loaded = true
 				return
 			end
 		end,
