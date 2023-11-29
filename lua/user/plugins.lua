@@ -103,7 +103,7 @@ return {
 		}
 	},
 	-- "rafamadriz/friendly-snippets",
-	{ "L3MON4D3/LuaSnip",     lazy = true },
+	{ "L3MON4D3/LuaSnip",               lazy = true },
 
 	{
 		"lewis6991/gitsigns.nvim",
@@ -128,26 +128,27 @@ return {
 			require("config.zen-mode")
 		end
 	},
-	{ "folke/twilight.nvim",  event = "VeryLazy" },
-	{ "romainl/vim-cool",     event = "VeryLazy" },
-	{ "ThePrimeagen/harpoon", event = "VeryLazy" },
-	{ "mbbill/undotree",      event = "VeryLazy" },
+	{ "folke/twilight.nvim",            event = "VeryLazy" },
+	{ "romainl/vim-cool",               event = "VeryLazy" },
+	{ "ThePrimeagen/harpoon",           event = "VeryLazy" },
+	{ "ThePrimeagen/git-worktree.nvim", event = "VeryLazy" },
+	{ "mbbill/undotree",                event = "VeryLazy" },
 
 	--[[ "github/copilot.vim", ]]
 	--
-	{ "tpope/vim-fugitive",   event = "VeryLazy" },
-	{ "tpope/vim-surround",   event = "VeryLazy" },
-	{ "tpope/vim-repeat",     event = "VeryLazy" },
-	{ "tpope/vim-sleuth",     event = "VeryLazy" },
-	{ "tpope/vim-obsession",  event = "VeryLazy" },
+	{ "tpope/vim-fugitive",             event = "VeryLazy" },
+	{ "tpope/vim-surround",             event = "VeryLazy" },
+	{ "tpope/vim-repeat",               event = "VeryLazy" },
+	{ "tpope/vim-sleuth",               event = "VeryLazy" },
+	{ "tpope/vim-obsession",            event = "VeryLazy" },
 
 	--[[ "windwp/nvim-autopairs", ]]
 	--[[ { "numToStr/Comment.nvim", event = "VeryLazy" }, ]]
 	--[[ "moll/vim-bbye", ]]
-	{ "folke/which-key.nvim", lazy = true },
-	{ "fedepujol/move.nvim",  event = "VeryLazy" },
+	{ "folke/which-key.nvim",           lazy = true },
+	{ "fedepujol/move.nvim",            event = "VeryLazy" },
 	--[[ "ggandor/leap.nvim", ]]
-	{ "preservim/tagbar",     event = "VeryLazy" },
+	{ "preservim/tagbar",               event = "VeryLazy" },
 	--"TimUntersberger/neogit",
 	--[[ "amadeus/vim-evokai", ]]
 	--[[ "B4mbus/oxocarbon-lua.nvim", ]]

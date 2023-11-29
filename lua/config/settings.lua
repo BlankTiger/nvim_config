@@ -25,7 +25,6 @@ opt.shiftwidth = 4
 opt.smarttab = true
 opt.ignorecase = true
 opt.smartcase = true
-opt.softtabstop = 4
 opt.cursorline = true
 opt.number = true
 opt.relativenumber = true

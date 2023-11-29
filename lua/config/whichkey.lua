@@ -213,15 +213,11 @@ local mappings = {
 		["."] = { "<cmd>cnext<cr>", "Go to next quickfix entry" },
 		["c"] = { "<cmd>cclose<cr>", "Close quickfix" },
 	},
-	-- packer
-	["<leader>p"] = {
-		name = "Packer",
-		c = { "<cmd>PackerCompile<cr>", "Compile" },
-		i = { "<cmd>PackerInstall<cr>", "Install" },
-		s = { "<cmd>PackerSync<cr>", "Sync" },
-		S = { "<cmd>PackerStatus<cr>", "Status" },
-		u = { "<cmd>PackerUpdate<cr>", "Update" },
-	},
+
+	-- ["<leader>w"] = {
+	--
+	-- },
+	--
 	--["<leader>j"] = {
 	--	name = "Jupyter",
 	--	["]x"] = { "ctrih]h<CR><CR>" }
@@ -249,6 +245,8 @@ local mappings = {
 			"<cmd>Gitsigns diffthis HEAD<cr>",
 			"Diff",
 		},
+		w = { "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", "Change worktree" },
+		C = { "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", "Create a work tree" },
 	},
 
 	-- LSP utilities
