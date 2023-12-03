@@ -101,7 +101,6 @@ for _, server in pairs(servers) do
   --[[ end ]]
 
   if server == "rust_analyzer" then
-
     -- local keymap = vim.keymap.set
     -- local key_opts = { silent = true }
     --
@@ -124,9 +123,9 @@ for _, server in pairs(servers) do
     -- keymap("n", "<leader>rss", "<cmd>RustSSR<Cr>", key_opts)
     -- keymap("n", "<leader>rxd", "<cmd>RustOpenExternalDocs<Cr>", key_opts)
 
-    -- local ext_path = 'C:/Users/work/.vscode/extensions/lldb-172/'
-    -- local codelldb_path = ext_path .. "adapter/codelldb"
-    -- local liblldb_path = ext_path .. "adapter/liblldb.lib"
+    local ext_path = 'C:/Users/work/.vscode/extensions/lldb-172/'
+    local codelldb_path = ext_path .. "adapter/codelldb"
+    local liblldb_path = ext_path .. "adapter/liblldb.lib"
 
     require("rust-tools").setup {
       -- dap = {
@@ -134,10 +133,10 @@ for _, server in pairs(servers) do
       -- },
       tools = {
         on_initialized = function()
-        --   vim.cmd [[
-        -- autocmd BufEnter,CursorHold,InsertLeave,BufWritePost *.rs lua vim.lsp.codelens.refresh()
-        -- " autocmd BufEnter,CursorHold,InsertLeave,BufWritePost *.rs silent! lua vim.lsp.codelens.refresh()
-        -- ]]
+          vim.cmd [[
+        autocmd BufEnter,CursorHold,InsertLeave,BufWritePost *.rs lua vim.lsp.codelens.refresh()
+        autocmd BufEnter,CursorHold,InsertLeave,BufWritePost *.rs silent! lua vim.lsp.codelens.refresh()
+        ]]
         end,
       },
       server = {

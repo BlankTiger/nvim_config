@@ -75,12 +75,13 @@ return {
 	},
 	{
 		"MunifTanjim/prettier.nvim",
+		-- ft = { "html", "css", "js", "ts", "jsx", "tsx" },
 		lazy = true,
 		config = function()
 			require("config.prettier")
 		end
 	},
-	{ "lervag/vimtex",                 lazy = true },
+	{ "lervag/vimtex",                 ft = "tex", lazy = true },
 	{ "barreiroleo/ltex-extra.nvim",   lazy = true },
 	{ "simrat39/rust-tools.nvim",      lazy = true },
 	{ "Vimjas/vim-python-pep8-indent", lazy = true },
@@ -168,6 +169,15 @@ return {
 	},
 
 	{
+		"stevearc/oil.nvim",
+		config = function()
+			require("config.oil")
+		end,
+		opts = {},
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+
+	{
 		"glepnir/dashboard-nvim",
 		lazy = false,
 		priority = 900,
@@ -183,6 +193,11 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {},
+	},
+	{
+		"blazkowolf/gruber-darker.nvim",
+		lazy = false,
+		priority = 1000,
 	},
 	{
 		"AckslD/nvim-neoclip.lua",

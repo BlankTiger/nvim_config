@@ -92,7 +92,7 @@ local mappings = {
 	--[[ ["<S-h>"] = { "<cmd>BufferLineCyclePrev<CR>", "Cycle to previous buffer" }, ]]
 	["<leader>"] = {
 		name = "Some utility leader mappings",
-		["<leader>"] = { "<cmd>Prettier<CR>", "Use prettier" },
+		["<leader>"] = { "<cmd>lua require('prettier')<CR><cmd>Prettier<CR>", "Use prettier" },
 	},
 	["<leader>c"] = { "<cmd>Bdelete!<CR>", "Close current buffer" },
 	["<leader>b"] = {
@@ -266,6 +266,7 @@ local mappings = {
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
 		t = { "<cmd> Telescope tags<cr>", "Show tags" },
+		R = { "<cmd>LspRestart<cr>", "Restart LSP" },
 	},
 
 	-- DAP
@@ -320,6 +321,8 @@ local mappings = {
 	-- 	v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	-- },
 	["\\"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
+
+	["<leader>o"] = { "<cmd>lua require('oil').open_float()<cr>", "Open oil.nvim in a floating window" },
 }
 
 -- Bindings for moving lines up and down
