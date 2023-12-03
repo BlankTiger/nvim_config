@@ -30,7 +30,8 @@ local servers = {
   "marksman",
   "kotlin_language_server",
   "bashls",
-  "tailwindcss"
+  "tailwindcss",
+  "zls",
 }
 -- local servers = { "pyright", "rust_analyzer", "powershell_es", "asm_lsp", "dockerls", "elixirls", "texlab", "vimls", "terraformls", "jsonls", "sumneko_lua", "tsserver", "ansiblels", "clangd", "cssls", "cssmodules_ls", "emmet_ls", "html", "jdtls", "julials", "marksman" }
 
