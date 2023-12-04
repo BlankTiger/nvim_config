@@ -36,6 +36,7 @@ opt.shell = '/bin/zsh'
 opt.scrolloff = 8
 opt.inccommand = "split"
 opt.undofile = true
+opt.splitbelow = true
 g.neovide_transparency = 1
 g.do_filetype_lua = 1
 g.oxcarbon_lua_keep_terminal = 1
