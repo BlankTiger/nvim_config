@@ -305,10 +305,16 @@ local mappings = {
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 		r = { "<cmd>lua require('spectre').open()<cr>", "Replace with Spectre" },
 	},
-	["<leader>t"] = {
+	["<leader>T"] = {
 		name = "Trouble",
 		t = { "<cmd>TroubleToggle<cr>", "Toggle" },
 		r = { "<cmd>TroubleRefresh<cr>", "Refresh" },
+	},
+	["<leader>t"] = {
+		name = "Terminal",
+		f = { "<cmd>terminal<cr>", "Open fullscreen terminal" },
+		v = { "<cmd>vsplit term://zsh<cr>", "Open vertical split terminal" },
+		h = { "<cmd>split term://zsh<cr>", "Open horizontal split terminal" },
 	},
 	-- ["<leader>t"] = {
 	-- 	name = "Terminal",
@@ -358,6 +364,8 @@ local mappings_v = {
 vim.api.nvim_set_keymap("v", "<C-r>", "<CMD>SearchReplaceSingleBufferVisualSelection<CR>", {})
 vim.api.nvim_set_keymap("v", "<C-s>", "<CMD>SearchReplaceWithinVisualSelection<CR>", {})
 vim.api.nvim_set_keymap("v", "<C-b>", "<CMD>SearchReplaceWithinVisualSelectionCWord<CR>", {})
+
+vim.api.nvim_set_keymap("t", "<C-q>", "<CMD>q!<CR>", {})
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
