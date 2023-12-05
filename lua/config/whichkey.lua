@@ -320,6 +320,12 @@ local mappings = {
 		h = { "<cmd>6 split term://zsh<cr>", "Open horizontal split terminal" },
 	},
 
+	["<leader>n"] = {
+		name = "Notifications",
+		d = { "<cmd>lua require('notify').dismiss()<cr>", "Dismiss all notifications" },
+		s = { "<cmd>Notifications<cr>", "Show notifications" },
+	},
+
 	-- ["<leader>t"] = {
 	-- 	name = "Terminal",
 	-- 	n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
