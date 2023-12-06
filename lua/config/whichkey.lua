@@ -134,6 +134,10 @@ local mappings = {
 	["<C-j>"] = { "<C-w>j", "Move to the bottom window" },
 	["<C-k>"] = { "<C-w>k", "Move to the upper window" },
 
+	-- Move between prev and next buffer
+	["<C-A-i>"] = { "<cmd>bnext<cr>", "Jump to next buffer"},
+	["<C-A-o>"] = { "<cmd>bprev<cr>", "Jump to previous buffer"},
+
 	-- Utility
 	-- [";"] = { ":", "Allow to save a keystroke" },
 	-- ["<C-b>"] = { "<C-v>", "Visual block mode" },
