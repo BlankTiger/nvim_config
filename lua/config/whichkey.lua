@@ -116,19 +116,27 @@ local mappings = {
 		o = { "<cmd>VimtexCompileOutput<CR>", "Toggle output" },
 		w = { "<cmd>VimtexCountWords<CR>", "Count words" },
 	},
+
 	-- Resizing windows
 	["<C-Down>"] = { "<cmd>resize -2<CR>", "Resize window up" },
 	["<C-Up>"] = { "<cmd>resize +2<CR>", "Resize window down" },
 	["<C-Left>"] = { "<cmd>vertical resize -2<CR>", "Resize window left" },
 	["<C-Right>"] = { "<cmd>vertical resize +2<CR>", "Resize window right" },
+
+	["<C-A-J>"] = { "<cmd>resize -2<CR>", "Resize window up" },
+	["<C-A-K>"] = { "<cmd>resize +2<CR>", "Resize window down" },
+	["<C-A-H>"] = { "<cmd>vertical resize -2<CR>", "Resize window left" },
+	["<C-A-L>"] = { "<cmd>vertical resize +2<CR>", "Resize window right" },
+
 	-- Moving around in windows
 	["<C-h>"] = { "<C-w>h", "Move to window on the left" },
 	["<C-l>"] = { "<C-w>l", "Move to window on the right" },
 	["<C-j>"] = { "<C-w>j", "Move to the bottom window" },
 	["<C-k>"] = { "<C-w>k", "Move to the upper window" },
+
 	-- Utility
-	[";"] = { ":", "Allow to save a keystroke" },
-	["<C-b>"] = { "<C-v>", "Visual block mode" },
+	-- [";"] = { ":", "Allow to save a keystroke" },
+	-- ["<C-b>"] = { "<C-v>", "Visual block mode" },
 	["<leader>w"] = { "<cmd>w!<CR>", "Save" },
 	["<leader>q"] = { "<cmd>q<CR>", "Quit" },
 	["<leader>c"] = { "<cmd>quitall<CR>", "Quit all" },
