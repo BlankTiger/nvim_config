@@ -3,12 +3,12 @@ if not cmp_status_ok then
   return
 end
 
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
-  return
-end
+-- local snip_status_ok, luasnip = pcall(require, "luasnip")
+-- if not snip_status_ok then
+--   return
+-- end
 
-require("luasnip/loaders/from_vscode").lazy_load()
+-- require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
@@ -48,7 +48,7 @@ local kind_icons = {
 cmp.setup {
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body) -- For `luasnip` users.
+      -- luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
   mapping = {
@@ -75,7 +75,7 @@ cmp.setup {
       vim_item.menu = ({
         --[[ copilot = "[Copilot]", ]]
         nvim_lsp = "[LSP]",
-        luasnip = "[Snippet]",
+        -- luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
       })[entry.source.name]
@@ -85,7 +85,7 @@ cmp.setup {
   sources = {
     --[[ { name = "copilot" }, ]]
     { name = "nvim_lsp" },
-    { name = "luasnip" },
+    -- { name = "luasnip" },
     { name = "path" },
     { name = "buffer" },
   },

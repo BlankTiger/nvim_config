@@ -100,11 +100,11 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-nvim-lua",
 			--[[ "hrsh7th/cmp-copilot", ]]
-			"saadparwaiz1/cmp_luasnip",
+			-- "saadparwaiz1/cmp_luasnip",
 		}
 	},
 	-- "rafamadriz/friendly-snippets",
-	{ "L3MON4D3/LuaSnip",               lazy = true },
+	-- { "L3MON4D3/LuaSnip",               lazy = true },
 
 	{
 		"lewis6991/gitsigns.nvim",
