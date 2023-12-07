@@ -169,7 +169,8 @@ return {
 	},
 
 	{
-		"stevearc/oil.nvim",
+		url = "https://github.com/BlankTiger/oil.nvim",
+		-- "stevearc/oil.nvim",
 		config = function()
 			require("config.oil")
 		end,
