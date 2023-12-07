@@ -17,6 +17,7 @@ null_ls.setup({
 		formatting.black.with({ extra_args = { "--fast", "--line-length", "100" } }),
 		formatting.isort.with({ extra_args = { "--profile", "black", "-l", "100" } }),
 		formatting.prettier.with({ extra_args = {} }),
+		formatting.latexindent.with({ extra_args = { "-l=" .. vim.fn.expand('$HOME/.config/indentconfig.yaml') } }),
 		diagnostics.mypy.with({
 			extra_args = {
 				"--ignore-missing-imports",
