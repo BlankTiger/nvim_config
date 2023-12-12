@@ -135,14 +135,15 @@ local mappings = {
 	["<C-k>"] = { "<C-w>k", "Move to the upper window" },
 
 	-- Move between prev and next buffer
-	["<C-A-i>"] = { "<cmd>bnext<cr>", "Jump to next buffer"},
-	["<C-A-o>"] = { "<cmd>bprev<cr>", "Jump to previous buffer"},
+	["<C-A-i>"] = { "<cmd>bnext<cr>", "Jump to next buffer" },
+	["<C-A-o>"] = { "<cmd>bprev<cr>", "Jump to previous buffer" },
 
 	-- Utility
 	-- [";"] = { ":", "Allow to save a keystroke" },
 	-- ["<C-b>"] = { "<C-v>", "Visual block mode" },
 	["<leader>w"] = { "<cmd>w!<CR>", "Save" },
 	["<leader>q"] = { "<cmd>q<CR>", "Quit" },
+	["<C-q>"] = { "<cmd>q<CR>", "Quit" },
 	["<leader>c"] = { "<cmd>quitall<CR>", "Quit all" },
 	["<leader>C"] = { "<cmd>quitall!<CR>", "Quit all. NOW!" },
 	["<leader>y"] = { "<cmd>lua require('telescope').extensions.neoclip.default()<CR>", "Neoclip saved yanks" },
@@ -165,7 +166,19 @@ local mappings = {
 	--[[ 	c = { "<cmd>NvimTreeClose<cr>", "Close" }, ]]
 	--[[ 	r = { "<cmd>NvimTreeRefresh<cr>", "Refresh" }, ]]
 	--[[ }, ]]
+
 	-- telescope
+	["<leader>a"] = {
+		function()
+			require("telescope")
+			local input = vim.fn.input("Search pattern (ripgrep): ")
+			if input == "" then
+				vim.notify("You didn't enter any search pattern")
+			else
+				vim.cmd("Ag " .. input)
+			end
+		end, "Use rg to find files"
+	},
 	["<leader>f"] = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Find files",

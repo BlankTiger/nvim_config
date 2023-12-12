@@ -95,6 +95,9 @@ telescope.setup {
       case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
     },
     notify = {},
+    git_diffs = {
+      git_command = { "git", "log", "--oneline", "--decorate", "--all", "." }   -- list result
+    },
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,
@@ -103,6 +106,8 @@ telescope.setup {
   },
 }
 
-telescope.load_extension('fzf')
-telescope.load_extension('notify')
+telescope.load_extension("fzf")
+telescope.load_extension("notify")
 telescope.load_extension("git_worktree")
+telescope.load_extension("ag")
+telescope.load_extension("git_diffs")

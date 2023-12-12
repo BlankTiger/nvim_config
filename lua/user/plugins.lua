@@ -37,6 +37,21 @@ return {
 				build =
 				"cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 			},
+			{
+				"kelly-lin/telescope-ag",
+				config = function()
+					local telescope_ag = require("telescope-ag")
+					telescope_ag.setup({
+						cmd = telescope_ag.cmds.rg, -- defaults to telescope_ag.cmds.ag
+					})
+				end
+			},
+			{
+				"paopaol/telescope-git-diffs.nvim",
+				config = function()
+					require("diffview")
+				end
+			},
 		}
 	},
 
