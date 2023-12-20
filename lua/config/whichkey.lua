@@ -412,6 +412,8 @@ vim.api.nvim_set_keymap("n", "<C-b>", "<C-b>zz", {})
 
 vim.api.nvim_set_keymap("n", "<M-,>", "<cmd>cprev<cr>", {})
 vim.api.nvim_set_keymap("n", "<M-.>", "<cmd>cnext<cr>", {})
+vim.api.nvim_set_keymap("n", "<C-i>", "<C-i>zz", {})
+vim.api.nvim_set_keymap("n", "<C-o>", "<C-o>zz", {})
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
