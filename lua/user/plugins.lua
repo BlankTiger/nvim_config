@@ -55,6 +55,8 @@ return {
 		}
 	},
 
+	{ "duane9/nvim-rg" },
+
 	{
 		"folke/neodev.nvim",
 		lazy = false,
@@ -153,7 +155,7 @@ return {
 	--[[ "github/copilot.vim", ]]
 	--
 	{ "tpope/vim-fugitive",             event = "VeryLazy" },
-	{ "tpope/vim-surround",             event = "VeryLazy" },
+	-- { "tpope/vim-surround",             event = "VeryLazy" },
 	{ "tpope/vim-repeat",               event = "VeryLazy" },
 	{ "tpope/vim-sleuth",               event = "VeryLazy" },
 	{ "tpope/vim-obsession",            event = "VeryLazy" },
@@ -279,14 +281,14 @@ return {
 			require("config.mini-indentscope")
 		end
 	},
-	{
-		'echasnovski/mini.pairs',
-		version = false,
-		event = "VeryLazy",
-		config = function()
-			require("config.mini-pairs")
-		end
-	},
+	-- {
+	-- 	'echasnovski/mini.pairs',
+	-- 	version = false,
+	-- 	event = "VeryLazy",
+	-- 	config = function()
+	-- 		require("config.mini-pairs")
+	-- 	end
+	-- },
 	{
 		'echasnovski/mini.surround',
 		version = false,
@@ -324,7 +326,18 @@ return {
 	{
 		"folke/flash.nvim",
 		event = "VeryLazy",
-		opts = {},
+		opts = {
+			highlight = {
+				backdrop = true,
+				matches = true,
+				groups = {
+					match = "FlashMatch",
+					current = "FlashLabel",
+					backdrop = "FlashBackdrop",
+					label = "FlashCurrent",
+				},
+			},
+		},
 	},
 
 	{

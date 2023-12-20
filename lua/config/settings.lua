@@ -10,6 +10,8 @@ local opt = vim.opt
 local g = vim.g
 local cmd = vim.cmd
 
+g.rg_command = 'rg --vimgrep'
+
 -- Keymapping (most of which is in whichkey config in lua/user/whichkey.lua) --
 g.mapleader = ','
 g.maplocalleader = ','

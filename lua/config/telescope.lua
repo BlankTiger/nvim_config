@@ -8,9 +8,14 @@ local actions = require('telescope.actions')
 telescope.setup {
   defaults = {
 
-    prompt_prefix = ' ',
+    -- prompt_prefix = ' ',
     selection_caret = ' ',
     path_display = { 'smart' },
+    layout_strategy = 'vertical',
+    layout_config = {
+      width = 0.8,
+      height = 0.85,
+    },
 
     mappings = {
       i = {
@@ -79,13 +84,18 @@ telescope.setup {
     },
   },
   pickers = {
-    -- Default configuration for builtin pickers goes here:
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
+    find_files = {
+      path_display = { "absolute" },
+      -- theme = "dropdown",
+    },
+    git_files = {
+      path_display = { "absolute" },
+      -- theme = "dropdown",
+    },
+    live_grep = {
+      path_display = { "absolute" },
+      -- theme = "dropdown",
+    },
   },
   extensions = {
     fzf = {
@@ -98,11 +108,6 @@ telescope.setup {
     git_diffs = {
       git_command = { "git", "log", "--oneline", "--decorate", "--all", "." }   -- list result
     },
-    -- Your extension configuration goes here:
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
-    -- please take a look at the readme of the extension you want to configure
   },
 }
 

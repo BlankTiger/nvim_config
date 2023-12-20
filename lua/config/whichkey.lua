@@ -3,6 +3,8 @@ if not status_ok then
 	return
 end
 
+local vim = vim
+
 local setup = {
 	plugins = {
 		marks = true, -- shows a list of your marks on ' and `
@@ -180,11 +182,11 @@ local mappings = {
 		end, "Use rg to find files"
 	},
 	["<leader>f"] = {
-		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+		"<cmd>lua require('telescope.builtin').find_files()<cr>",
 		"Find files",
 	},
 	["<leader>i"] = {
-		"<cmd>lua require('telescope.builtin').git_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+		"<cmd>lua require('telescope.builtin').git_files()<cr>",
 		"Find files",
 	},
 	["<leader>F"] = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "Find Text" },
@@ -402,6 +404,11 @@ vim.api.nvim_set_keymap("v", "<C-b>", "<CMD>SearchReplaceWithinVisualSelectionCW
 
 vim.api.nvim_set_keymap("t", "<C-q>", "<CMD>q!<CR>", {})
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {})
+
+vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", {})
+vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", {})
+vim.api.nvim_set_keymap("n", "<C-f>", "<C-f>zz", {})
+vim.api.nvim_set_keymap("n", "<C-b>", "<C-b>zz", {})
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
