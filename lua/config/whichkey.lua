@@ -410,6 +410,9 @@ vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", {})
 vim.api.nvim_set_keymap("n", "<C-f>", "<C-f>zz", {})
 vim.api.nvim_set_keymap("n", "<C-b>", "<C-b>zz", {})
 
+vim.api.nvim_set_keymap("n", "<M-,>", "<cmd>cprev<cr>", {})
+vim.api.nvim_set_keymap("n", "<M-.>", "<cmd>cnext<cr>", {})
+
 which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(mappings_n, opts)
