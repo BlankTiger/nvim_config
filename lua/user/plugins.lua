@@ -116,10 +116,11 @@ return {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-nvim-lua",
-			--[[ "hrsh7th/cmp-copilot", ]]
+			-- "hrsh7th/cmp-copilot",
 			-- "saadparwaiz1/cmp_luasnip",
 		}
 	},
+	{ "github/copilot.vim" },
 	-- "rafamadriz/friendly-snippets",
 	-- { "L3MON4D3/LuaSnip",               lazy = true },
 
@@ -152,8 +153,6 @@ return {
 	{ "ThePrimeagen/git-worktree.nvim", event = "VeryLazy" },
 	{ "mbbill/undotree",                event = "VeryLazy" },
 
-	--[[ "github/copilot.vim", ]]
-	--
 	{ "tpope/vim-fugitive",             event = "VeryLazy" },
 	-- { "tpope/vim-surround",             event = "VeryLazy" },
 	{ "tpope/vim-repeat",               event = "VeryLazy" },

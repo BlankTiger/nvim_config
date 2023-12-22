@@ -64,7 +64,7 @@ cmp.setup {
     },
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
-    ["<Tab>"] = cmp.mapping.confirm { select = true },
+    -- ["<Tab>"] = cmp.mapping.confirm { select = true },
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
@@ -73,7 +73,7 @@ cmp.setup {
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
-        --[[ copilot = "[Copilot]", ]]
+        -- copilot = "[Copilot]",
         nvim_lsp = "[LSP]",
         -- luasnip = "[Snippet]",
         buffer = "[Buffer]",
@@ -83,7 +83,7 @@ cmp.setup {
     end,
   },
   sources = {
-    --[[ { name = "copilot" }, ]]
+    -- { name = "copilot" },
     { name = "nvim_lsp" },
     -- { name = "luasnip" },
     { name = "path" },
