@@ -418,6 +418,8 @@ vim.api.nvim_set_keymap("n", "<M-.>", "<cmd>cnext<cr>", {})
 vim.api.nvim_set_keymap("n", "<C-i>", "<C-i>zz", {})
 vim.api.nvim_set_keymap("n", "<C-o>", "<C-o>zz", {})
 
+vim.api.nvim_set_keymap("x", "<M-w>", "<esc><cmd>'<,'>!remove-widows<cr>", { noremap = true })
+
 which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(mappings_n, opts)
