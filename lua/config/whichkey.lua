@@ -254,6 +254,13 @@ local mappings = {
 	-- git utilities
 	["<leader>g"] = {
 		name = "Git",
+		h = {
+			function()
+				vim.cmd [[cgetexpr system("hunkqf")]]
+				vim.cmd [[copen]]
+			end,
+			"Get all git diff hunks into a quickfix list",
+		},
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
 		q = { "<cmd>lua require('gitsigns').setqflist()<cr>", "hunks into quickfix" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
