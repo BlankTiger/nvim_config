@@ -114,7 +114,7 @@ local mappings = {
 		v = { "<cmd>VimtexView<CR>", "View PDF" },
 		c = { "<cmd>VimtexCompile<CR>", "Compile" },
 		s = { "<cmd>VimtexStop<CR>", "Stop compilation" },
-		t = { "<cmd>VimtexTocToggle<CR>", "Toggle TOC" },
+		t = { "<cmd>VimtexTocToggle<CR><C-h>", "Toggle TOC" },
 		o = { "<cmd>VimtexCompileOutput<CR>", "Toggle output" },
 		w = { "<cmd>VimtexCountWords<CR>", "Count words" },
 	},
@@ -212,6 +212,16 @@ local mappings = {
 			["f"] = { "<CMD>SearchReplaceMultiBufferCFile<CR>", "[f]ile" },
 		},
 	},
+
+	-- still harpoon
+	["<M-A>"] = { "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "Navigate to 1st harpoon file" },
+	["<M-S>"] = { "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "Navigate to 2st harpoon file"},
+	["<M-D>"] = { "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "Navigate to 3st harpoon file"},
+	["<M-F>"] = { "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "Navigate to 4st harpoon file"},
+	["<M-G>"] = { "<cmd>lua require('harpoon.ui').nav_file(5)<cr>", "Navigate to 5st harpoon file"},
+	["<M-H>"] = { "<cmd>lua require('harpoon.ui').nav_file(6)<cr>", "Navigate to 6st harpoon file"},
+	["<M-J>"] = { "<cmd>lua require('harpoon.ui').nav_file(7)<cr>", "Navigate to 7st harpoon file"},
+
 	["<space>"] = {
 		-- harpoon
 		["H"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon menu" },
@@ -236,6 +246,7 @@ local mappings = {
 		["l"] = { "<cmd>lua require('harpoon.ui').nav_file(8)<cr>", "Navigate to 8th harpoon file" },
 		["9"] = { "<cmd>lua require('harpoon.ui').nav_file(9)<cr>", "Navigate to 9th harpoon file" },
 		["z"] = { "<cmd>lua require('harpoon.ui').nav_file(9)<cr>", "Navigate to 9th harpoon file" },
+
 		-- quickfix jumping
 		[","] = { "<cmd>cprev<cr>", "Go to prev quickfix entry" },
 		["."] = { "<cmd>cnext<cr>", "Go to next quickfix entry" },
@@ -419,6 +430,7 @@ vim.api.nvim_set_keymap("n", "<C-i>", "<C-i>zz", {})
 vim.api.nvim_set_keymap("n", "<C-o>", "<C-o>zz", {})
 
 vim.api.nvim_set_keymap("x", "<M-w>", "<esc><cmd>'<,'>!remove-widows<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<M-w>", "<S-v><esc><cmd>'<,'>!remove-widows<cr>", { noremap = true })
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
