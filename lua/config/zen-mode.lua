@@ -19,7 +19,7 @@ zen_mode.setup({
 		tmux = { enabled = false },
 		alacritty = {
 			enabled = true,
-			font = "14",
+			font = "17",
 		},
 	},
 })

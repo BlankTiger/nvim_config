@@ -346,14 +346,14 @@ return {
 		-- event = "VeryLazy",
 	},
 
-	-- {
-	-- 	"lukas-reineke/indent-blankline.nvim",
-	-- 	version = "2.20.8",
-	-- 	-- event = "InsertEnter",
-	-- 	config = function()
-	-- 		require("config.indentline")
-	-- 	end
-	-- },
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		version = "2.20.8",
+		event = "InsertEnter",
+		config = function()
+			require("config.indentline")
+		end
+	},
 
 
 	{
