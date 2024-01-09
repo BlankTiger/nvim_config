@@ -205,7 +205,14 @@ return {
 	},
 
 	--[[ { "roobert/search-replace.nvim" }, ]]
-	--[[ { "catppuccin/nvim",            name = "catppuccin" }, ]]
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		lazy = false,
+		priority = 900,
+		opts = {},
+	},
+
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
