@@ -204,7 +204,14 @@ return {
 	},
 
 	--[[ { "roobert/search-replace.nvim" }, ]]
-	--[[ { "catppuccin/nvim",            name = "catppuccin" }, ]]
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		lazy = false,
+		priority = 900,
+		opts = {},
+	},
+
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
@@ -345,14 +352,14 @@ return {
 		-- event = "VeryLazy",
 	},
 
-	-- {
-	-- 	"lukas-reineke/indent-blankline.nvim",
-	-- 	version = "2.20.8",
-	-- 	-- event = "InsertEnter",
-	-- 	config = function()
-	-- 		require("config.indentline")
-	-- 	end
-	-- },
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		version = "2.20.8",
+		event = "InsertEnter",
+		config = function()
+			require("config.indentline")
+		end
+	},
 
 
 	{

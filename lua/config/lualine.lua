@@ -62,6 +62,12 @@ local spaces = function()
   return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
+function isRecording ()
+  local reg = vim.fn.reg_recording()
+  if reg == "" then return "" end -- not recording
+  return "@" .. reg
+end
+
 lualine.setup({
   options = {
     icons_enabled = true,
@@ -73,12 +79,12 @@ lualine.setup({
   },
   sections = {
     lualine_a = { branch, diagnostics },
-    lualine_b = { mode },
+    lualine_b = { isRecording, mode },
     lualine_c = { "filename" },
     -- lualine_x = { "encoding", "fileformat", "filetype" },
-    lualine_x = { diff, spaces, "encoding", filetype },
-    lualine_y = { location },
-    lualine_z = { progress },
+    lualine_x = { "searchcount", "selectioncount", diff, spaces, "encoding", filetype },
+    -- lualine_y = { location },
+    -- lualine_z = { progress },
   },
   inactive_sections = {
     lualine_a = {},

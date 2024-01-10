@@ -5,5 +5,6 @@ end
 
 notify.setup({
     top_down = false,
-    fps = 90,
+    stages = "static",
+    -- fps = 90,
 })
