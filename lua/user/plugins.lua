@@ -1,5 +1,8 @@
 return {
 	"nvim-lua/plenary.nvim",
+
+	{ "chaoren/vim-wordmotion" },
+
 	{
 		"nvim-lualine/lualine.nvim",
 		event = "VeryLazy",
@@ -120,7 +123,17 @@ return {
 			-- "saadparwaiz1/cmp_luasnip",
 		}
 	},
-	{ "github/copilot.vim" },
+
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("config.copilot")
+		end,
+	},
+
+	-- { "github/copilot.vim" },
 	-- "rafamadriz/friendly-snippets",
 	-- { "L3MON4D3/LuaSnip",               lazy = true },
 
