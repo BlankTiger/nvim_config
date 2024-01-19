@@ -32,6 +32,7 @@ local servers = {
   "bashls",
   "tailwindcss",
   "zls",
+  "nil_ls",
 }
 -- local servers = { "pyright", "rust_analyzer", "powershell_es", "asm_lsp", "dockerls", "elixirls", "texlab", "vimls", "terraformls", "jsonls", "sumneko_lua", "tsserver", "ansiblels", "clangd", "cssls", "cssmodules_ls", "emmet_ls", "html", "jdtls", "julials", "marksman" }
 
