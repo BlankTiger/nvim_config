@@ -1,5 +1,8 @@
 return {
 	"nvim-lua/plenary.nvim",
+
+	"chaoren/vim-wordmotion",
+
 	{
 		"nvim-lualine/lualine.nvim",
 		event = "VeryLazy",
