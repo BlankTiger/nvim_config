@@ -3,4 +3,12 @@ if not status_ok then
   return
 end
 
-copilot.setup({})
+copilot.setup({
+  suggestion = {
+    auto_trigger = true,
+    debounce = 0,
+    keymap = {
+      accept = "<C-j>",
+    },
+  },
+})
