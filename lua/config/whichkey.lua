@@ -274,10 +274,42 @@ local mappings = {
 		},
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
 		q = { "<cmd>lua require('gitsigns').setqflist()<cr>", "hunks into quickfix" },
-		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
+		j = {
+			function()
+				gitsigns = require("gitsigns")
+				gitsigns.next_hunk()
+			end,
+			"Next Hunk"
+		},
+		J = {
+			function()
+				gitsigns = require("gitsigns")
+				gitsigns.next_hunk()
+				gitsigns.preview_hunk_inline()
+			end,
+			"Next Hunk"
+		},
+		k = {
+			function()
+				gitsigns = require("gitsigns")
+				gitsigns.prev_hunk()
+			end,
+			"Prev Hunk"
+		},
+		K = {
+			function()
+				gitsigns = require("gitsigns")
+				gitsigns.prev_hunk()
+				gitsigns.preview_hunk_inline()
+				-- vim.schedule(function()
+				-- 	vim.cmd [[norm zt]]
+				-- end)
+			end,
+			"Prev Hunk"
+		},
 		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
 		p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
+		P = { "<cmd>lua require 'gitsigns'.preview_hunk_inline()<cr>", "Preview Hunk" },
 		r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
 		R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
 		s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
@@ -381,15 +413,17 @@ local mappings = {
 	["\\"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
 
 	["<leader>o"] = { "<cmd>lua require('oil').open_float()<cr>", "Open oil.nvim in a floating window" },
+
+	["zm"] = { "zz", "Center screen vertically" },
 }
 
 -- Bindings for moving lines up and down
 local mappings_n = {
 	["<S-h>"] = { "^", "Go to line start" },
 	["<S-l>"] = { "$", "Go to line end" },
-	["<S-m>"] = { "J", "Concatenate next line" },
-	["<S-k>"] = { "<cmd>MoveLine(-1)<CR>", "Move line up" },
-	["<S-j>"] = { "<cmd>MoveLine(1)<CR>", "Move line down" },
+	-- ["<S-m>"] = { "J", "Concatenate next line" },
+	-- ["<S-k>"] = { "<cmd>MoveLine(-1)<CR>", "Move line up" },
+	-- ["<S-j>"] = { "<cmd>MoveLine(1)<CR>", "Move line down" },
 	[">"] = { ">>", "Indent" },
 	["<"] = { "<<", "Dedent" },
 }
@@ -401,8 +435,10 @@ local mappings_n = {
 --[[ vim.keymap.set({"n", "o", "x"}, "ge", "<cmd>lua require('spider').motion('ge')<CR>", { desc = "Spider-ge" }) ]]
 local mappings_v = {
 	["<S-m>"] = { "J", "Concatenate lines" },
-	["<S-k>"] = { ":'<,'>MoveBlock(-1)<CR>", "Move lines up" },
-	["<S-j>"] = { ":'<,'>MoveBlock(1)<CR>", "Move lines down" },
+	["<S-j>"] = { ":m '>+1<cr>gv=gv", "Move lines up" },
+	["<S-k>"] = { ":m '<-2<cr>gv=gv", "Move lines down" },
+	-- ["<S-k>"] = { ":'<,'>MoveBlock(-1)<CR>", "Move lines up" },
+	-- ["<S-j>"] = { ":'<,'>MoveBlock(1)<CR>", "Move lines down" },
 	--[[ ["<C-r>"] = { ":'<,'>SearchReplaceSingleBufferVisualSelection<CR>" }, ]]
 	--[[ ["<C-s>"] = { ":'<,'>SearchReplaceWithinVisualSelection<CR>" }, ]]
 	--[[ ["<C-b>"] = { ":'<,'>SearchReplaceWithinVisualSelectionCWord<CR>" }, ]]
@@ -426,11 +462,14 @@ vim.api.nvim_set_keymap("n", "<C-b>", "<C-b>zz", {})
 
 vim.api.nvim_set_keymap("n", "<M-,>", "<cmd>cprev<cr>", {})
 vim.api.nvim_set_keymap("n", "<M-.>", "<cmd>cnext<cr>", {})
+vim.api.nvim_set_keymap("n", "<M-;>", "<cmd>cpfile<cr>", {})
+vim.api.nvim_set_keymap("n", "<M-'>", "<cmd>cnfile<cr>", {})
 vim.api.nvim_set_keymap("n", "<C-i>", "<C-i>zz", {})
 vim.api.nvim_set_keymap("n", "<C-o>", "<C-o>zz", {})
 
 vim.api.nvim_set_keymap("x", "<M-w>", "<esc><cmd>'<,'>!remove-widows<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<M-w>", "<S-v><esc><cmd>'<,'>!remove-widows<cr>", { noremap = true })
+-- vim.keymap.set("n", "J", "mzJ`z")
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
