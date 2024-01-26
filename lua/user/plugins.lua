@@ -114,11 +114,11 @@ return {
 			require("config.cmp")
 		end,
 		dependencies = {
-
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-nvim-lua",
+			"zbirenbaum/copilot-cmp",
 			-- "hrsh7th/cmp-copilot",
 			-- "saadparwaiz1/cmp_luasnip",
 		}
