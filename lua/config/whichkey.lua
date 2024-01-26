@@ -160,7 +160,7 @@ local mappings = {
 	--[[ ["<space>P"] = { '"+P' }, ]]
 
 	-- nvim-tree/file explorer
-	-- ["<leader>e"] = { "<cmd>Neotree toggle<CR>", "Open neotree" },
+	["<leader>e"] = { "<cmd>Neotree toggle<CR>", "Open neotree" },
 	--[[ ["<leader>e"] = { ]]
 	--[[ 	name = "Explorer", ]]
 	--[[ 	e = { "<cmd>NvimTreeToggle<cr>", "Toggle" }, ]]
@@ -413,7 +413,8 @@ local mappings = {
 	["\\"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
 
 	["<leader>o"] = { "<cmd>lua require('oil').open_float()<cr>", "Open oil.nvim in a floating window" },
-	["<leader>e"] = { "<cmd>lua require('oil').open()<cr>", "Open oil.nvim" },
+	-- ["<leader>e"] = { "<cmd>lua require('oil').open()<cr>", "Open oil.nvim" },
+	-- ["<leader>e"] = { ",
 
 	["zm"] = { "zz", "Center screen vertically" },
 }

@@ -183,6 +183,7 @@ return {
 	--[[ "amadeus/vim-evokai", ]]
 	--[[ "B4mbus/oxocarbon-lua.nvim", ]]
 	--[[ "kyazdani42/nvim-tree.lua", ]]
+
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
