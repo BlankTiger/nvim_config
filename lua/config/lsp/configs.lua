@@ -25,7 +25,7 @@ local servers = {
   "emmet_ls",
   "html",
   "marksman",
-  "taplo",
+  -- "taplo",
   "yamlls",
   "marksman",
   "kotlin_language_server",
@@ -38,6 +38,10 @@ local servers = {
 mason_lspconfig.setup({
   ensure_installed = servers,
 })
+
+local cargotomllsp_cfg = require("config.lsp.cargotomllsp")
+cargotomllsp_cfg.setup_cargotomllsp()
+
 
 for _, server in pairs(servers) do
   local opts = {
