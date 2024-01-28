@@ -119,8 +119,7 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-nvim-lua",
 			"zbirenbaum/copilot-cmp",
-			-- "hrsh7th/cmp-copilot",
-			-- "saadparwaiz1/cmp_luasnip",
+			"saadparwaiz1/cmp_luasnip",
 		}
 	},
 
@@ -133,9 +132,15 @@ return {
 		end,
 	},
 
-	-- { "github/copilot.vim" },
 	-- "rafamadriz/friendly-snippets",
 	-- { "L3MON4D3/LuaSnip",               lazy = true },
+	{
+		"L3MON4D3/LuaSnip",
+		-- follow latest release.
+		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		-- install jsregexp (optional!).
+		build = "make install_jsregexp"
+	},
 
 	{
 		"lewis6991/gitsigns.nvim",
