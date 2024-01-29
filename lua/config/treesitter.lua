@@ -8,6 +8,8 @@ if not status_ok_ then
 	return
 end
 
+compiler.compilers = { "clang++" }
+
 local status_ok_, repeatable = pcall(require, "nvim-treesitter.textobjects.repeatable_move")
 if not status_ok_ then
 	return
